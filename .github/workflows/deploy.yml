@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Remove node_modules before deploy
-        run: rm -rf node_modules .wrangler
+      - name: Prepare deploy directory
+        run: |
+          mkdir /tmp/deploy
+          cp index.html privacy.html terms.html refunds.html robots.txt sitemap.xml wrangler.toml googlec3a6068073bcf4c1.html /tmp/deploy/
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: 02709cbec18d848913b4246015b9148f
           wranglerVersion: "4.149.0"
+          workingDirectory: /tmp/deploy
           command: deploy --name noisy-paper-8d01
