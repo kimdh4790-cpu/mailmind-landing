@@ -16,3 +16,5 @@ jobs:
           accountId: 02709cbec18d848913b4246015b9148f
           wranglerVersion: "4.149.0"
           command: deploy --name noisy-paper-8d01
+        env:
+          WRANGLER_LOG: debug
