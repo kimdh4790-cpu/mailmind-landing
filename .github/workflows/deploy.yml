@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Remove node_modules before deploy
+        run: rm -rf node_modules .wrangler
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
@@ -16,5 +18,3 @@ jobs:
           accountId: 02709cbec18d848913b4246015b9148f
           wranglerVersion: "4.149.0"
           command: deploy --name noisy-paper-8d01
-        env:
-          WRANGLER_LOG: debug
