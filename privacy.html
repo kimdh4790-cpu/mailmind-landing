@@ -18,6 +18,14 @@
     ul { padding-left: 20px; margin-bottom: 12px; }
     li { font-size: 15px; color: #3c4043; margin-bottom: 6px; }
     a { color: #1a73e8; }
+    .highlight-box {
+      background: #e8f0fe;
+      border-left: 4px solid #1a73e8;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .highlight-box p { margin-bottom: 0; color: #202124; }
     footer { border-top: 1px solid #e0e0e0; padding: 24px 5%; text-align: center; font-size: 13px; color: #5f6368; }
   </style>
 </head>
@@ -25,27 +33,95 @@
 <nav><a href="https://mailmind.yongcha.app" class="logo">✦ MailMind AI</a></nav>
 <div class="container">
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated: October 3, 2026</p>
-  <p>MailMind AI is a Chrome extension that generates AI-powered email replies inside Gmail. We are committed to protecting your privacy.</p>
+  <p class="date">Last updated: October 12, 2026</p>
+  <p>MailMind AI is a Chrome extension that generates AI-powered email replies inside Gmail. We are committed to protecting your privacy and handling your data responsibly.</p>
 
   <h2>1. Information We Access</h2>
   <p>To generate reply suggestions, MailMind AI accesses:</p>
   <ul>
     <li>The content of the email you currently have open in Gmail</li>
     <li>Email attachments (PDF files and images) when you request attachment-aware replies</li>
+    <li>Your Gmail address (used solely to identify your account within MailMind)</li>
   </ul>
   <p>We access this data only when you actively click the "Generate Reply" button. We do not scan your inbox in the background.</p>
 
-  <h2>2. How We Use Your Data</h2>
+  <h2>2. Google API Scopes We Use</h2>
+  <p>MailMind AI requests the following Gmail API permissions:</p>
+  <ul>
+    <li><strong>gmail.readonly</strong> — to read the email currently open so we can generate a contextual reply. We do not read any other emails in your inbox.</li>
+  </ul>
+  <p>We request only the minimum permissions necessary to provide the service. We do not request access to send emails, delete emails, or modify your Gmail account in any way.</p>
+
+  <h2>3. How We Use Your Data</h2>
   <p>Email content is sent to our secure API server and then forwarded to Anthropic's Claude AI to generate a reply. The data is:</p>
   <ul>
     <li>Processed in real-time only</li>
-    <li>Never stored on our servers</li>
-    <li>Never used for training AI models</li>
-    <li>Never shared with third parties except Anthropic (for AI processing)</li>
+    <li>Never stored on our servers after processing</li>
+    <li>Never used to train or improve AI models</li>
+    <li>Never sold to third parties</li>
+    <li>Never used for advertising purposes</li>
     <li>Immediately discarded after the reply is generated</li>
   </ul>
 
-  <h2>3. Google API Scopes & Usage</h2>
-  <p>MailMind AI uses the following Gmail API scopes:</p>
+  <h2>4. Data Sharing</h2>
+  <p>We share your data only as strictly necessary to provide the service:</p>
   <ul>
+    <li><strong>Anthropic (Claude AI)</strong> — Your email content is transmitted to Anthropic's API to generate reply suggestions. Anthropic processes this data according to their <a href="https://www.anthropic.com/legal/privacy" target="_blank">Privacy Policy</a>. Anthropic does not use API-submitted content to train models.</li>
+  </ul>
+  <p>We do not share your data with any other third parties, analytics platforms, advertising networks, or data brokers.</p>
+
+  <h2>5. Data Protection</h2>
+  <p>We implement the following measures to protect your data:</p>
+  <ul>
+    <li>All data transmissions use HTTPS/TLS encryption in transit</li>
+    <li>Our API server does not log or persist email content</li>
+    <li>We do not maintain any database of your emails or personal information</li>
+    <li>API keys and authentication tokens are stored securely using Chrome's built-in storage APIs</li>
+    <li>We conduct regular security reviews of our infrastructure</li>
+  </ul>
+
+  <h2>6. Data Retention & Deletion</h2>
+  <p>Because we do not store your email content, there is no email data to delete from our servers. The only data we retain is:</p>
+  <ul>
+    <li>Your account email address and a usage count, stored only to manage service limits</li>
+    <li>This minimal account data is deleted within 30 days of a deletion request</li>
+  </ul>
+  <p>To request deletion of your account data, email us at <a href="mailto:support@yongcha.app">support@yongcha.app</a> with the subject "Data Deletion Request".</p>
+
+  <h2>7. AI Limited Use Compliance</h2>
+  <div class="highlight-box">
+    <p>MailMind AI's use of data obtained from Google Workspace APIs, including Gmail, adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the <strong>Limited Use requirements</strong>. Specifically:</p>
+  </div>
+  <ul>
+    <li>We use Gmail data only to provide the email reply generation feature described to the user</li>
+    <li>We do not use Gmail data for serving advertisements</li>
+    <li>We do not allow humans to read your Gmail data, except when you explicitly request support and provide consent, or as required by law</li>
+    <li>We do not use or transfer Gmail data to train AI or machine learning models, including Anthropic's models</li>
+    <li>We do not transfer Gmail data to third parties except as necessary to provide the reply generation service (Anthropic's API), and only under data protection agreements</li>
+  </ul>
+
+  <h2>8. Your Rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Request deletion of your account data</li>
+    <li>Revoke MailMind AI's access to your Gmail account at any time via <a href="https://myaccount.google.com/permissions" target="_blank">Google Account Permissions</a></li>
+    <li>Uninstall the Chrome extension to immediately stop all data access</li>
+  </ul>
+
+  <h2>9. Children's Privacy</h2>
+  <p>MailMind AI is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify users of significant changes by updating the "Last updated" date at the top of this page. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>11. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@yongcha.app">support@yongcha.app</a></li>
+    <li>Website: <a href="https://mailmind.yongcha.app" target="_blank">mailmind.yongcha.app</a></li>
+  </ul>
+</div>
+<footer>© 2026 MailMind AI · <a href="https://mailmind.yongcha.app">mailmind.yongcha.app</a></footer>
+</body>
+</html>
