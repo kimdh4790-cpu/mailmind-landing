@@ -44,7 +44,7 @@
   <ul>
     <li><strong>Email content</strong> you open or ask us to reply to, translate or summarize.</li>
     <li><strong>Inbox preview for the AI Brief.</strong> When you open the home screen of the app, the sender, subject and a text preview of your most recent messages (up to 30, across the accounts you connected) are sent to our server to produce the AI Brief (a short summary and priority list). This happens automatically when the home screen loads, not only when you tap a button. The results are cached for up to 24 hours.</li>
-    <li><strong>Attachments</strong> (for example PDF files and images) only when you ask us to analyze them.</li>
+    <li><strong>Attachments</strong> (for example PDF files and images) only when you ask us to analyze them. Compressed (.zip) attachments you open in the app are unpacked on your device; their contents are not sent to our server.</li>
     <li><strong>Account information</strong>: your sign-in email address, display name, plan and usage counts.</li>
     <li><strong>Profile you enter</strong>: name, job title, company, signature, business card text and saved phrases. In the app these are stored on your device and sent with a request only when needed to write the reply. In the Chrome extension they are kept in Chrome's sync storage, which Chrome synchronizes across your signed-in browsers through your Google account.</li>
     <li><strong>Chrome extension status check.</strong> When a supported webmail page loads, the extension asks our server for your plan and usage counters, sending only your account email address. Email content is sent only when you click a button for an AI feature, and the extension does not send your inbox list.</li>
@@ -65,7 +65,7 @@
   <h2>4. How your data is processed</h2>
   <p>When you request an AI feature, the relevant email text (and attachment text if you asked for it) is sent over HTTPS to our API server, which forwards it to an AI provider to generate the result and returns it to your device.</p>
   <ul>
-    <li>Our API runs on Cloudflare Workers. Some requests, including the conversion of business documents to PDF, are processed on a server we operate on Oracle Cloud.</li>
+    <li>Our API runs on Cloudflare Workers. When you save a generated business document as PDF, the document content is sent over HTTPS (through a Cloudflare Tunnel) to a conversion server we operate on Oracle Cloud. It converts the document in memory and returns the PDF to you; it does not save the document, and it blocks the page being converted from loading outside resources.</li>
     <li>AI providers: OpenAI (primary) and Anthropic (fallback). They process the text we send under their own terms; see the <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Privacy Policy</a> and the <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Privacy Policy</a>.</li>
     <li>We do not use your email content to train our own models, we do not use it for advertising, and we do not sell your data.</li>
   </ul>
@@ -75,6 +75,7 @@
   <table>
     <tr><th>Data</th><th>Retention</th></tr>
     <tr><td>Original email text and attachments</td><td>Not stored after the request is processed</td></tr>
+    <tr><td>Documents sent for PDF conversion</td><td>Not stored after the PDF is returned</td></tr>
     <tr><td>Translation results</td><td>Up to 7 days (cache)</td></tr>
     <tr><td>AI Brief results (summary, suggested actions)</td><td>Up to 24 hours (cache)</td></tr>
     <tr><td>Usage counters (monthly replies, summaries, translations)</td><td>Up to about 40 days</td></tr>
@@ -89,7 +90,7 @@
   <h2>6. Who we share data with</h2>
   <ul>
     <li><strong>AI providers</strong> (OpenAI, Anthropic): email content needed to generate results, as described above.</li>
-    <li><strong>Cloudflare</strong>: hosting of our API and data storage.</li>
+    <li><strong>Cloudflare</strong>: hosting of our API, data storage, and the secure tunnel to our conversion server.</li>
     <li><strong>Oracle Cloud</strong>: a server we operate for processing and PDF conversion.</li>
     <li><strong>Google (Firebase Cloud Messaging)</strong>: push notifications.</li>
     <li><strong>Paddle</strong>: payment processing for paid plans on our website. Paddle receives your billing details and email; we receive the plan and subscription status.</li>
@@ -110,7 +111,7 @@
   <ul>
     <li>Revoke MailMind AI's access to your Google account at any time at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>.</li>
     <li>Disconnect a mail account or sign out in the app to remove its credentials from your device. Uninstalling the app or removing the extension stops all access.</li>
-    <li>To access or delete your server-side data, email <a href="mailto:support@yongcha.app">support@yongcha.app</a> with the subject "Data Deletion Request". We delete your account data within 30 days of a verified request.</li>
+    <li>To access or delete your server-side data, email <a href="mailto:support@yongcha.app">support@yongcha.app</a> with the subject "Data Deletion Request". We delete your account data within 30 days of a verified request. This removes your account, subscription, usage, saved phrases, team, push token, document profile and learned style records. Two things cannot be linked to you and are handled differently: translation and mail-summary caches are keyed by a content fingerprint, so they simply expire (up to 7 days and 24 hours), and payment records held by Paddle must be requested from Paddle.</li>
   </ul>
 
   <h2>10. Children</h2>
