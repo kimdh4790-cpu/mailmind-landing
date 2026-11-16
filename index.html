@@ -67,6 +67,7 @@
       text-decoration: none; transition: background 0.15s;
     }
     .btn-nav:hover { background: var(--pink-dark); color: #fff; }
+    .nav-links a.btn-nav, .nav-links a.btn-nav:hover { color: #fff; }
 
     /* HERO */
     .hero {
@@ -122,6 +123,89 @@
     }
     .hero-trust span { display: flex; align-items: center; gap: 6px; }
     .hero-trust .dot { color: var(--green); font-size: 16px; }
+
+    /* HERO — app screenshots */
+    .hero { overflow: hidden; }
+    .hero-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; gap: 56px; align-items: center;
+    }
+    .hero-visual {
+      position: relative;
+      height: 520px;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-visual::before {
+      content: ""; position: absolute; inset: 8% 10%;
+      background: radial-gradient(closest-side, rgba(233,30,140,0.22), rgba(233,30,140,0) 70%);
+      filter: blur(8px); z-index: 0;
+    }
+    .phone {
+      position: absolute;
+      width: 230px; aspect-ratio: 600 / 1304;
+      padding: 9px; border-radius: 42px;
+      background: #14141f;
+      box-shadow: 0 0 0 2px #2c2c3a inset, 0 30px 60px -18px rgba(26,26,46,0.45), 0 10px 24px -10px rgba(233,30,140,0.35);
+    }
+    .phone img, .phone picture { display: block; width: 100%; height: 100%; border-radius: 33px; object-fit: cover; }
+    .phone-back  { transform: translateX(-34%) rotate(-7deg); z-index: 1; filter: saturate(0.95); }
+    .phone-front { transform: translateX(30%) translateY(18px) rotate(5deg); z-index: 2; }
+    .hero-chip {
+      position: absolute; z-index: 3;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--pink-light);
+      border-radius: 14px; padding: 9px 14px;
+      font-size: 13px; font-weight: 600; color: var(--text);
+      box-shadow: 0 10px 24px -10px rgba(26,26,46,0.35);
+      white-space: nowrap;
+    }
+    .hero-chip b { color: var(--pink); }
+    .hero-chip.c1 { top: 8%; right: 2%; }
+    .hero-chip.c2 { bottom: 9%; left: 0; }
+    @media (min-width: 960px) {
+      .hero { text-align: left; padding: 72px 32px 72px; }
+      .hero-inner { grid-template-columns: 1.08fr 0.92fr; }
+      .hero h1, .hero-sub { margin-left: 0; }
+      .hero-cta, .hero-trust { justify-content: flex-start; }
+    }
+    @media (max-width: 959px) {
+      .hero-visual { height: 470px; margin-top: -8px; max-width: 480px; width: 100%; margin-left: auto; margin-right: auto; }
+      .phone { width: 200px; border-radius: 36px; padding: 8px; }
+      .phone img, .phone picture { border-radius: 28px; }
+      .hero-chip.c1 { right: 4%; }
+    }
+    @media (max-width: 420px) {
+      .hero-visual { height: 400px; }
+      .phone { width: 170px; border-radius: 30px; padding: 7px; }
+      .phone img, .phone picture { border-radius: 23px; }
+      .phone-back  { transform: translateX(-26%) rotate(-7deg); }
+      .phone-front { transform: translateX(25%) translateY(14px) rotate(5deg); }
+      .hero-chip { font-size: 12px; padding: 7px 11px; }
+      .hero-chip.c1 { top: 4%; right: 0; }
+      .hero-chip.c2 { bottom: 4%; left: 0; }
+    }
+
+    /* FEATURES — mobile app showcase */
+    .app-showcase {
+      display: grid; gap: 40px; align-items: center;
+      background: linear-gradient(135deg, #fff 0%, var(--pink-light) 140%);
+      border: 2px solid var(--pink-light); border-radius: 20px;
+      padding: 40px 32px; margin-bottom: 20px; overflow: hidden;
+    }
+    .app-showcase-visual { display: flex; justify-content: center; }
+    .app-showcase .phone { position: relative; transform: none; width: 240px; }
+    .app-showcase h3 { font-size: 26px; font-weight: 800; margin: 8px 0 10px; line-height: 1.25; }
+    .app-showcase p { font-size: 15px; color: var(--text-2); line-height: 1.7; max-width: 560px; }
+    .app-showcase ul { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .app-showcase li { font-size: 14px; color: var(--text-2); display: flex; gap: 8px; align-items: flex-start; }
+    .app-showcase li::before { content: "✓"; color: var(--green); font-weight: 700; }
+    @media (min-width: 860px) {
+      .app-showcase { grid-template-columns: 300px 1fr; padding: 44px 56px; }
+    }
+    @media (max-width: 420px) {
+      .app-showcase { padding: 28px 18px; }
+      .app-showcase .phone { width: 200px; }
+    }
 
     /* PAIN POINTS */
     .pain {
@@ -434,20 +518,40 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">✦ Chrome · Android · iOS · 17 Languages · 6 Email Platforms</div>
-  <h1>Every email,<br><span class="pink">perfect.</span></h1>
-  <p class="hero-sub">
-    Can't read the language? Don't know what to say? MailMind writes professional, natural email replies for you — one click.
-  </p>
-  <div class="hero-cta">
-    <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-primary">Add to Chrome — It's Free</a>
-    <a href="#demo" class="btn-secondary">See how it works ↓</a>
+  <div class="hero-inner">
+  <div class="hero-copy">
+    <div class="hero-badge">✦ Chrome · Android · iOS · 17 Languages · 6 Email Platforms</div>
+    <h1>Every email,<br><span class="pink">perfect.</span></h1>
+    <p class="hero-sub">
+      Can't read the language? Don't know what to say? MailMind writes professional, natural email replies for you — one click.
+    </p>
+    <div class="hero-cta">
+      <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-primary">Add to Chrome — It's Free</a>
+      <a href="#demo" class="btn-secondary">See how it works ↓</a>
+    </div>
+    <div class="hero-trust">
+      <span><span class="dot">✓</span> Free trial, no card</span>
+      <span><span class="dot">✓</span> Emails not kept on our servers</span>
+      <span><span class="dot">✓</span> Gmail, Outlook, iCloud & more</span>
+      <span><span class="dot">✓</span> 17 languages</span>
+    </div>
   </div>
-  <div class="hero-trust">
-    <span><span class="dot">✓</span> Free trial, no card</span>
-    <span><span class="dot">✓</span> Emails not kept on our servers</span>
-    <span><span class="dot">✓</span> Gmail, Outlook, iCloud & more</span>
-    <span><span class="dot">✓</span> 17 languages</span>
+  <div class="hero-visual">
+    <div class="phone phone-back">
+      <picture>
+        <source srcset="/img/app-login.webp" type="image/webp">
+        <img src="/img/app-login.jpg" width="600" height="1304" alt="MailMind app sign-in screen: Sign in with Google" loading="eager" decoding="async">
+      </picture>
+    </div>
+    <div class="phone phone-front">
+      <picture>
+        <source srcset="/img/app-account.webp" type="image/webp">
+        <img src="/img/app-account.jpg" width="600" height="1304" alt="MailMind app account tab showing plan usage and automatic language detection" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="hero-chip c1">🌍 <b>17</b> languages</div>
+    <div class="hero-chip c2">⚡ Chrome · Android · iOS</div>
+  </div>
   </div>
 </section>
 
@@ -1374,6 +1478,28 @@
     </div>
   </div>
 
+  <!-- 모바일 앱 스크린샷 -->
+  <div class="app-showcase">
+    <div class="app-showcase-visual">
+      <div class="phone">
+        <picture>
+          <source srcset="/img/app-account.webp" type="image/webp">
+          <img src="/img/app-account.jpg" width="600" height="1304" alt="MailMind mobile app: account tab with monthly usage and language settings" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+    <div>
+      <div class="feature-hero-badge">📱 MOBILE APP</div>
+      <h3>Your inbox, in your pocket</h3>
+      <p>The same AI replies, translation and documents on Android and iOS, with your Gmail, Outlook, iCloud, Naver, Yahoo and Yahoo Japan accounts in one inbox.</p>
+      <ul>
+        <li>Sign in with Google — nothing new to set up</li>
+        <li>Language detected automatically from your phone</li>
+        <li>See your plan and this month's usage at a glance</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 나머지 기능 작게 -->
   <div class="features-grid">
     <div class="feature-card">
@@ -1425,11 +1551,6 @@
       <div class="feature-icon">📄</div>
       <h3>Document & card generation</h3>
       <p>Turn an email into a quote, invoice, contract or report — with tables and charts — or a greeting card, in the recipient's country format. Download as PDF, Word or Excel, or attach it to your reply. (Pro+ and Team)</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📱</div>
-      <h3>Mobile app</h3>
-      <p>The same AI replies, translation and documents on Android and iOS, with your Gmail, Outlook, iCloud, Naver, Yahoo and Yahoo Japan accounts in one inbox.</p>
     </div>
   </div>
 </section>
