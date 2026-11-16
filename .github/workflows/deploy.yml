@@ -12,7 +12,7 @@ jobs:
       - name: Prepare site directory
         run: |
           mkdir -p site
-          cp index.html privacy.html terms.html refunds.html robots.txt sitemap.xml googlec3a6068073bcf4c1.html site/
+          cp index.html privacy.html terms.html refunds.html robots.txt sitemap.xml googlec3a6068073bcf4c1.html og-image.png favicon.png favicon-48.png site/
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
