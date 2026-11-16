@@ -199,8 +199,11 @@
     .app-showcase ul { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
     .app-showcase li { font-size: 14px; color: var(--text-2); display: flex; gap: 8px; align-items: flex-start; }
     .app-showcase li::before { content: "✓"; color: var(--green); font-weight: 700; }
+    .shot-card { display: block; width: 100%; max-width: 440px; height: auto; border-radius: 18px; box-shadow: 0 24px 48px -20px rgba(26,26,46,0.35), 0 8px 20px -10px rgba(25,118,210,0.25); }
     @media (min-width: 860px) {
       .app-showcase { grid-template-columns: 300px 1fr; padding: 44px 56px; }
+      .app-showcase.reverse { grid-template-columns: 1fr 440px; }
+      .app-showcase.reverse > .app-showcase-visual { order: 2; }
     }
     @media (max-width: 420px) {
       .app-showcase { padding: 28px 18px; }
@@ -539,14 +542,14 @@
   <div class="hero-visual">
     <div class="phone phone-back">
       <picture>
-        <source srcset="/img/app-login.webp" type="image/webp">
-        <img src="/img/app-login.jpg" width="600" height="1304" alt="MailMind app sign-in screen: Sign in with Google" loading="eager" decoding="async">
+        <source srcset="/img/app-reply-panel.webp" type="image/webp">
+        <img src="/img/app-reply-panel.jpg" width="600" height="1304" alt="MailMind reply panel with Reply, Analysis and Doc Gen tabs, Compare Replies and Smart Reply" loading="eager" decoding="async">
       </picture>
     </div>
     <div class="phone phone-front">
       <picture>
-        <source srcset="/img/app-account.webp" type="image/webp">
-        <img src="/img/app-account.jpg" width="600" height="1304" alt="MailMind app account tab showing plan usage and automatic language detection" loading="eager" fetchpriority="high" decoding="async">
+        <source srcset="/img/app-reply-ja.webp" type="image/webp">
+        <img src="/img/app-reply-ja.jpg" width="600" height="1304" alt="A Japanese business email and the polite Japanese reply MailMind wrote for it" loading="eager" fetchpriority="high" decoding="async">
       </picture>
     </div>
     <div class="hero-chip c1">🌍 <b>17</b> languages</div>
@@ -1478,13 +1481,33 @@
     </div>
   </div>
 
+  <!-- 다국어 답장 스크린샷 -->
+  <div class="app-showcase reverse">
+    <div class="app-showcase-visual">
+      <picture>
+        <source srcset="/img/app-reply-ar.webp" type="image/webp">
+        <img class="shot-card" src="/img/app-reply-ar.jpg" width="640" height="699" alt="MailMind AI Reply card with an Arabic business reply, reply language set to Arabic" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <div>
+      <div class="feature-hero-badge">🌍 ANY LANGUAGE</div>
+      <h3>Reply in their language, not yours</h3>
+      <p>Pick the reply language — or leave it on Auto Detect — and choose how well you know the person. MailMind writes the greeting, the body and the sign-off the way a native speaker would.</p>
+      <ul>
+        <li>17 reply languages, including Arabic, Japanese, Hindi and Thai</li>
+        <li>Business, Formal, Friend / Casual or Romantic — one tap</li>
+        <li>Turn the email into a document or export the reply right from the card</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- 모바일 앱 스크린샷 -->
   <div class="app-showcase">
     <div class="app-showcase-visual">
       <div class="phone">
         <picture>
-          <source srcset="/img/app-account.webp" type="image/webp">
-          <img src="/img/app-account.jpg" width="600" height="1304" alt="MailMind mobile app: account tab with monthly usage and language settings" loading="lazy" decoding="async">
+          <source srcset="/img/app-compose.webp" type="image/webp">
+          <img src="/img/app-compose.jpg" width="600" height="1304" alt="MailMind mobile app AI Compose screen: describe the email you want and pick tone and language" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -1493,9 +1516,9 @@
       <h3>Your inbox, in your pocket</h3>
       <p>The same AI replies, translation and documents on Android and iOS, with your Gmail, Outlook, iCloud, Naver, Yahoo and Yahoo Japan accounts in one inbox.</p>
       <ul>
+        <li>AI Compose: describe the email in one line, get a full draft</li>
+        <li>Pick the tone and the language, or let MailMind detect them</li>
         <li>Sign in with Google — nothing new to set up</li>
-        <li>Language detected automatically from your phone</li>
-        <li>See your plan and this month's usage at a glance</li>
       </ul>
     </div>
   </div>
