@@ -889,20 +889,20 @@
 
   // ===== UI 다국어 문자열 =====
   const UI = {
-    English:    { gen:'✦ Generate AI Reply', summary:'📝 Thread Summary', insert:'✉️ Insert into Gmail', copy:'📋 Copy', urgency:'🔴 Urgent', negotiation:'🤝 Negotiation', detected:'📌 Detected Actions', commitments:'📋 Your Commitments', guard:'🛡️ Pre-send Check', guardMsg:'⚠️ Date mismatch: Oct 15 (Sunday) — confirm before sending', toneLabel:'Reply Tone', countryLabel:"Sender's Country", langLabel:'My Language', lockBasic:'🔒 3 Versions require Basic or Pro', lockPro:'🔒 Smart Reply requires Pro' },
-    Korean:     { gen:'✦ AI 답장 생성', summary:'📝 스레드 요약', insert:'✉️ Gmail에 삽입', copy:'📋 복사', urgency:'🔴 긴급', negotiation:'🤝 협상', detected:'📌 감지된 할 일', commitments:'📋 내 약속', guard:'🛡️ 전송 전 확인', guardMsg:'⚠️ 날짜 불일치: 10월 15일(일요일) — 전송 전 확인 필요', toneLabel:'답장 톤', countryLabel:'발신자 국가', langLabel:'내 언어', lockBasic:'🔒 3가지 버전은 Basic 이상 필요', lockPro:'🔒 스마트 답장은 Pro 필요' },
-    Japanese:   { gen:'✦ AI返信を生成', summary:'📝 スレッド要約', insert:'✉️ Gmailに挿入', copy:'📋 コピー', urgency:'🔴 緊急', negotiation:'🤝 交渉', detected:'📌 検出されたアクション', commitments:'📋 コミットメント', guard:'🛡️ 送信前確認', guardMsg:'⚠️ 日付不一致: 10月15日(日曜日) — 送信前に確認', toneLabel:'返信トーン', countryLabel:'送信者の国', langLabel:'使用言語', lockBasic:'🔒 3バージョンはBasic以上が必要', lockPro:'🔒 スマート返信はPro必要' },
-    Chinese:    { gen:'✦ 生成AI回复', summary:'📝 邮件摘要', insert:'✉️ 插入Gmail', copy:'📋 复制', urgency:'🔴 紧急', negotiation:'🤝 谈判', detected:'📌 检测到的操作', commitments:'📋 我的承诺', guard:'🛡️ 发送前检查', guardMsg:'⚠️ 日期不匹配：10月15日（周日）— 发送前确认', toneLabel:'回复语气', countryLabel:'发件人国家', langLabel:'我的语言', lockBasic:'🔒 3个版本需要Basic或更高', lockPro:'🔒 智能回复需要Pro' },
-    Spanish:    { gen:'✦ Generar respuesta IA', summary:'📝 Resumen del hilo', insert:'✉️ Insertar en Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociación', detected:'📌 Acciones detectadas', commitments:'📋 Mis compromisos', guard:'🛡️ Verificación previa', guardMsg:'⚠️ Fecha incorrecta: 15 oct (domingo) — confirmar antes de enviar', toneLabel:'Tono de respuesta', countryLabel:'País del remitente', langLabel:'Mi idioma', lockBasic:'🔒 3 versiones requieren Basic o superior', lockPro:'🔒 Smart Reply requiere Pro' },
-    French:     { gen:'✦ Générer une réponse IA', summary:'📝 Résumé du fil', insert:'✉️ Insérer dans Gmail', copy:'📋 Copier', urgency:'🔴 Urgent', negotiation:'🤝 Négociation', detected:'📌 Actions détectées', commitments:'📋 Mes engagements', guard:'🛡️ Vérification avant envoi', guardMsg:'⚠️ Date incorrecte : 15 oct (dimanche) — vérifier avant envoi', toneLabel:'Ton de réponse', countryLabel:'Pays expéditeur', langLabel:'Ma langue', lockBasic:'🔒 3 versions nécessitent Basic ou supérieur', lockPro:'🔒 Smart Reply nécessite Pro' },
-    German:     { gen:'✦ KI-Antwort generieren', summary:'📝 Thread-Zusammenfassung', insert:'✉️ In Gmail einfügen', copy:'📋 Kopieren', urgency:'🔴 Dringend', negotiation:'🤝 Verhandlung', detected:'📌 Erkannte Aktionen', commitments:'📋 Meine Zusagen', guard:'🛡️ Vor dem Senden prüfen', guardMsg:'⚠️ Datumsfehler: 15. Okt. (Sonntag) — bestätigen', toneLabel:'Antwortton', countryLabel:'Land des Absenders', langLabel:'Meine Sprache', lockBasic:'🔒 3 Versionen erfordern Basic oder höher', lockPro:'🔒 Smart Reply erfordert Pro' },
-    Portuguese: { gen:'✦ Gerar resposta IA', summary:'📝 Resumo do tópico', insert:'✉️ Inserir no Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociação', detected:'📌 Ações detectadas', commitments:'📋 Meus compromissos', guard:'🛡️ Verificação antes de enviar', guardMsg:'⚠️ Data incorreta: 15 out (domingo) — confirmar', toneLabel:'Tom de resposta', countryLabel:'País do remetente', langLabel:'Meu idioma', lockBasic:'🔒 3 versões requerem Basic ou superior', lockPro:'🔒 Smart Reply requer Pro' },
-    Arabic:     { gen:'✦ إنشاء رد AI', summary:'📝 ملخص المحادثة', insert:'✉️ إدراج في Gmail', copy:'📋 نسخ', urgency:'🔴 عاجل', negotiation:'🤝 تفاوض', detected:'📌 الإجراءات', commitments:'📋 التزاماتي', guard:'🛡️ فحص قبل الإرسال', guardMsg:'⚠️ تناقض في التاريخ: 15 أكتوبر (أحد) — تحقق', toneLabel:'نبرة الرد', countryLabel:'بلد المرسل', langLabel:'لغتي', lockBasic:'🔒 3 إصدارات تتطلب Basic أو أعلى', lockPro:'🔒 الرد الذكي يتطلب Pro' },
-    Turkish:    { gen:"✦ AI yanıtı oluştur", summary:'📝 Konu özeti', insert:"✉️ Gmail'e ekle", copy:'📋 Kopyala', urgency:'🔴 Acil', negotiation:'🤝 Müzakere', detected:'📌 Tespit edilen eylemler', commitments:'📋 Taahhütlerim', guard:'🛡️ Göndermeden önce kontrol', guardMsg:'⚠️ Tarih uyuşmazlığı: 15 Ekim (Pazar) — onaylayın', toneLabel:'Yanıt tonu', countryLabel:'Gönderenin ülkesi', langLabel:'Dilim', lockBasic:'🔒 3 Versiyon Basic veya üstü gerektirir', lockPro:'🔒 Akıllı Yanıt Pro gerektirir' },
-    Italian:    { gen:'✦ Genera risposta IA', summary:'📝 Riepilogo thread', insert:'✉️ Inserisci in Gmail', copy:'📋 Copia', urgency:'🔴 Urgente', negotiation:'🤝 Trattativa', detected:'📌 Azioni rilevate', commitments:'📋 I miei impegni', guard:'🛡️ Controllo pre-invio', guardMsg:'⚠️ Data errata: 15 ott (domenica) — confermare', toneLabel:'Tono risposta', countryLabel:'Paese mittente', langLabel:'La mia lingua', lockBasic:'🔒 3 versioni richiedono Basic o superiore', lockPro:'🔒 Smart Reply richiede Pro' },
-    Vietnamese: { gen:'✦ Tạo trả lời AI', summary:'📝 Tóm tắt chuỗi', insert:'✉️ Chèn vào Gmail', copy:'📋 Sao chép', urgency:'🔴 Khẩn cấp', negotiation:'🤝 Đàm phán', detected:'📌 Hành động phát hiện', commitments:'📋 Cam kết của tôi', guard:'🛡️ Kiểm tra trước khi gửi', guardMsg:'⚠️ Ngày không khớp: 15 tháng 10 (Chủ nhật) — xác nhận', toneLabel:'Giọng điệu', countryLabel:'Quốc gia người gửi', langLabel:'Ngôn ngữ của tôi', lockBasic:'🔒 3 phiên bản yêu cầu Basic trở lên', lockPro:'🔒 Smart Reply yêu cầu Pro' },
-    Thai:       { gen:'✦ สร้างการตอบกลับ AI', summary:'📝 สรุปเธรด', insert:'✉️ แทรกใน Gmail', copy:'📋 คัดลอก', urgency:'🔴 เร่งด่วน', negotiation:'🤝 การเจรจา', detected:'📌 การดำเนินการ', commitments:'📋 ข้อผูกมัด', guard:'🛡️ ตรวจสอบก่อนส่ง', guardMsg:'⚠️ วันที่ไม่ตรงกัน: 15 ต.ค. (วันอาทิตย์) — ยืนยัน', toneLabel:'โทน', countryLabel:'ประเทศผู้ส่ง', langLabel:'ภาษาของฉัน', lockBasic:'🔒 3 เวอร์ชันต้องการ Basic ขึ้นไป', lockPro:'🔒 Smart Reply ต้องการ Pro' },
-    Indonesian: { gen:'✦ Buat balasan AI', summary:'📝 Ringkasan utas', insert:'✉️ Masukkan ke Gmail', copy:'📋 Salin', urgency:'🔴 Mendesak', negotiation:'🤝 Negosiasi', detected:'📌 Tindakan terdeteksi', commitments:'📋 Komitmen saya', guard:'🛡️ Periksa sebelum kirim', guardMsg:'⚠️ Tanggal tidak cocok: 15 Okt (Minggu) — konfirmasi', toneLabel:'Nada balasan', countryLabel:'Negara pengirim', langLabel:'Bahasa saya', lockBasic:'🔒 3 Versi memerlukan Basic atau lebih tinggi', lockPro:'🔒 Smart Reply memerlukan Pro' },
+    English:    { gen:'✦ Generate AI Reply', summary:'📝 Thread Summary', insert:'✉️ Insert into Gmail', copy:'📋 Copy', urgency:'🔴 Urgent', negotiation:'🤝 Negotiation', detected:'📌 Detected Actions', commitments:'📋 Your Commitments', guard:'🛡️ Pre-send Check', guardMsg:'⚠️ Date mismatch: Oct 15 (Sunday) — confirm before sending', toneLabel:'Reply Tone', countryLabel:"Sender's Country", langLabel:'My Language', lockBasic:'🔒 Compare needs Basic (2 versions) or Pro (3)', lockPro:'🔒 Smart Reply requires Pro' },
+    Korean:     { gen:'✦ AI 답장 생성', summary:'📝 스레드 요약', insert:'✉️ Gmail에 삽입', copy:'📋 복사', urgency:'🔴 긴급', negotiation:'🤝 협상', detected:'📌 감지된 할 일', commitments:'📋 내 약속', guard:'🛡️ 전송 전 확인', guardMsg:'⚠️ 날짜 불일치: 10월 15일(일요일) — 전송 전 확인 필요', toneLabel:'답장 톤', countryLabel:'발신자 국가', langLabel:'내 언어', lockBasic:'🔒 비교 답장은 Basic(2버전)·Pro(3버전)부터', lockPro:'🔒 스마트 답장은 Pro 필요' },
+    Japanese:   { gen:'✦ AI返信を生成', summary:'📝 スレッド要約', insert:'✉️ Gmailに挿入', copy:'📋 コピー', urgency:'🔴 緊急', negotiation:'🤝 交渉', detected:'📌 検出されたアクション', commitments:'📋 コミットメント', guard:'🛡️ 送信前確認', guardMsg:'⚠️ 日付不一致: 10月15日(日曜日) — 送信前に確認', toneLabel:'返信トーン', countryLabel:'送信者の国', langLabel:'使用言語', lockBasic:'🔒 比較返信はBasic（2案）・Pro（3案）から', lockPro:'🔒 スマート返信はPro必要' },
+    Chinese:    { gen:'✦ 生成AI回复', summary:'📝 邮件摘要', insert:'✉️ 插入Gmail', copy:'📋 复制', urgency:'🔴 紧急', negotiation:'🤝 谈判', detected:'📌 检测到的操作', commitments:'📋 我的承诺', guard:'🛡️ 发送前检查', guardMsg:'⚠️ 日期不匹配：10月15日（周日）— 发送前确认', toneLabel:'回复语气', countryLabel:'发件人国家', langLabel:'我的语言', lockBasic:'🔒 比较回复需要Basic（2个）或Pro（3个）', lockPro:'🔒 智能回复需要Pro' },
+    Spanish:    { gen:'✦ Generar respuesta IA', summary:'📝 Resumen del hilo', insert:'✉️ Insertar en Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociación', detected:'📌 Acciones detectadas', commitments:'📋 Mis compromisos', guard:'🛡️ Verificación previa', guardMsg:'⚠️ Fecha incorrecta: 15 oct (domingo) — confirmar antes de enviar', toneLabel:'Tono de respuesta', countryLabel:'País del remitente', langLabel:'Mi idioma', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply requiere Pro' },
+    French:     { gen:'✦ Générer une réponse IA', summary:'📝 Résumé du fil', insert:'✉️ Insérer dans Gmail', copy:'📋 Copier', urgency:'🔴 Urgent', negotiation:'🤝 Négociation', detected:'📌 Actions détectées', commitments:'📋 Mes engagements', guard:'🛡️ Vérification avant envoi', guardMsg:'⚠️ Date incorrecte : 15 oct (dimanche) — vérifier avant envoi', toneLabel:'Ton de réponse', countryLabel:'Pays expéditeur', langLabel:'Ma langue', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply nécessite Pro' },
+    German:     { gen:'✦ KI-Antwort generieren', summary:'📝 Thread-Zusammenfassung', insert:'✉️ In Gmail einfügen', copy:'📋 Kopieren', urgency:'🔴 Dringend', negotiation:'🤝 Verhandlung', detected:'📌 Erkannte Aktionen', commitments:'📋 Meine Zusagen', guard:'🛡️ Vor dem Senden prüfen', guardMsg:'⚠️ Datumsfehler: 15. Okt. (Sonntag) — bestätigen', toneLabel:'Antwortton', countryLabel:'Land des Absenders', langLabel:'Meine Sprache', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply erfordert Pro' },
+    Portuguese: { gen:'✦ Gerar resposta IA', summary:'📝 Resumo do tópico', insert:'✉️ Inserir no Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociação', detected:'📌 Ações detectadas', commitments:'📋 Meus compromissos', guard:'🛡️ Verificação antes de enviar', guardMsg:'⚠️ Data incorreta: 15 out (domingo) — confirmar', toneLabel:'Tom de resposta', countryLabel:'País do remetente', langLabel:'Meu idioma', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply requer Pro' },
+    Arabic:     { gen:'✦ إنشاء رد AI', summary:'📝 ملخص المحادثة', insert:'✉️ إدراج في Gmail', copy:'📋 نسخ', urgency:'🔴 عاجل', negotiation:'🤝 تفاوض', detected:'📌 الإجراءات', commitments:'📋 التزاماتي', guard:'🛡️ فحص قبل الإرسال', guardMsg:'⚠️ تناقض في التاريخ: 15 أكتوبر (أحد) — تحقق', toneLabel:'نبرة الرد', countryLabel:'بلد المرسل', langLabel:'لغتي', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 الرد الذكي يتطلب Pro' },
+    Turkish:    { gen:"✦ AI yanıtı oluştur", summary:'📝 Konu özeti', insert:"✉️ Gmail'e ekle", copy:'📋 Kopyala', urgency:'🔴 Acil', negotiation:'🤝 Müzakere', detected:'📌 Tespit edilen eylemler', commitments:'📋 Taahhütlerim', guard:'🛡️ Göndermeden önce kontrol', guardMsg:'⚠️ Tarih uyuşmazlığı: 15 Ekim (Pazar) — onaylayın', toneLabel:'Yanıt tonu', countryLabel:'Gönderenin ülkesi', langLabel:'Dilim', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Akıllı Yanıt Pro gerektirir' },
+    Italian:    { gen:'✦ Genera risposta IA', summary:'📝 Riepilogo thread', insert:'✉️ Inserisci in Gmail', copy:'📋 Copia', urgency:'🔴 Urgente', negotiation:'🤝 Trattativa', detected:'📌 Azioni rilevate', commitments:'📋 I miei impegni', guard:'🛡️ Controllo pre-invio', guardMsg:'⚠️ Data errata: 15 ott (domenica) — confermare', toneLabel:'Tono risposta', countryLabel:'Paese mittente', langLabel:'La mia lingua', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply richiede Pro' },
+    Vietnamese: { gen:'✦ Tạo trả lời AI', summary:'📝 Tóm tắt chuỗi', insert:'✉️ Chèn vào Gmail', copy:'📋 Sao chép', urgency:'🔴 Khẩn cấp', negotiation:'🤝 Đàm phán', detected:'📌 Hành động phát hiện', commitments:'📋 Cam kết của tôi', guard:'🛡️ Kiểm tra trước khi gửi', guardMsg:'⚠️ Ngày không khớp: 15 tháng 10 (Chủ nhật) — xác nhận', toneLabel:'Giọng điệu', countryLabel:'Quốc gia người gửi', langLabel:'Ngôn ngữ của tôi', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply yêu cầu Pro' },
+    Thai:       { gen:'✦ สร้างการตอบกลับ AI', summary:'📝 สรุปเธรด', insert:'✉️ แทรกใน Gmail', copy:'📋 คัดลอก', urgency:'🔴 เร่งด่วน', negotiation:'🤝 การเจรจา', detected:'📌 การดำเนินการ', commitments:'📋 ข้อผูกมัด', guard:'🛡️ ตรวจสอบก่อนส่ง', guardMsg:'⚠️ วันที่ไม่ตรงกัน: 15 ต.ค. (วันอาทิตย์) — ยืนยัน', toneLabel:'โทน', countryLabel:'ประเทศผู้ส่ง', langLabel:'ภาษาของฉัน', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply ต้องการ Pro' },
+    Indonesian: { gen:'✦ Buat balasan AI', summary:'📝 Ringkasan utas', insert:'✉️ Masukkan ke Gmail', copy:'📋 Salin', urgency:'🔴 Mendesak', negotiation:'🤝 Negosiasi', detected:'📌 Tindakan terdeteksi', commitments:'📋 Komitmen saya', guard:'🛡️ Periksa sebelum kirim', guardMsg:'⚠️ Tanggal tidak cocok: 15 Okt (Minggu) — konfirmasi', toneLabel:'Nada balasan', countryLabel:'Negara pengirim', langLabel:'Bahasa saya', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply memerlukan Pro' },
   };
 
   // ===== 답장 데이터 =====
@@ -1614,11 +1614,6 @@
       <h3>Thread summary</h3>
       <p>Long email chain? Summarize the whole thread in your language in seconds. Know exactly what to reply before you type a word. Every plan: 50 / month on Starter, 500 on Basic, 900 on Pro, 1,000 on Pro+.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🧠</div>
-      <h3>Style learning</h3>
-      <p>MailMind learns your preferred tone and reply length over time. After 3 replies, it automatically defaults to your style.</p>
-    </div>
   </div>
 </section>
 
@@ -1680,7 +1675,7 @@
       <h3>Document Generation</h3>
       <p>Turn an email into a ready-to-send document. MailMind picks the right document for the request and lays it out the way it's done in the recipient's country — with tables, totals and charts.</p>
       <ul>
-        <li><b>1,200+ real document types for 26 countries</b> — 請求書 for Japan, Rechnung for Germany, Invoice for the US</li>
+        <li><b>1,400+ real document types for 26 countries</b> — 請求書 for Japan, Rechnung for Germany, Invoice for the US</li>
         <li><b>Writing to someone abroad?</b> Quotes and invoices follow the layout they're used to — Japanese, international English or European style — in their language</li>
         <li><b>Any of 17 languages,</b> whatever language the email came in</li>
         <li><b>Quotes and invoices that add up:</b> line totals, tax and grand total calculated, Excel with live formulas</li>
@@ -1724,7 +1719,8 @@
         <li><span class="check">✓</span> 35 AI replies in the first 30 days, then 10 / month</li>
         <li><span class="check">✓</span> AI Compose & AI Brief</li>
         <li><span class="check">✓</span> Email summary (50 / month)</li>
-        <li><span class="check">✓</span> 50 translations / month</li>
+        <li><span class="check">✓</span> 50 translations / month · 1 language per email</li>
+        <li><span class="check">✓</span> Reply polish (Refine)</li>
         <li><span class="check">✓</span> 17 languages supported</li>
         <li><span class="check">✓</span> 8 tone options</li>
         <li><span class="check">✓</span> Culture & industry detection</li>
@@ -1746,10 +1742,9 @@
         <li><span class="check">✓</span> Reply polish (Refine)</li>
         <li><span class="check">✓</span> 2 versions to compare</li>
         <li><span class="check">✓</span> Email summary (500 / month)</li>
-        <li><span class="check">✓</span> 500 translations / month</li>
+        <li><span class="check">✓</span> 500 translations / month · 2 languages per email</li>
         <li><span class="check">✓</span> Quick language switch</li>
-        <li><span class="check">✓</span> Signature & templates</li>
-        <li><span class="check">✓</span> Style learning</li>
+        <li><span class="check">✓</span> Signature & saved phrases</li>
         <li><span class="check">✓</span> Cancel anytime</li>
       </ul>
       <button class="btn-plan outline" onclick="openCheckout('pri_01m3ve7jkhcnr2jmfwz02yby6e')">Get Basic</button>
@@ -1767,9 +1762,7 @@
         <li><span class="check">✓</span> Smart Reply (summary + translate)</li>
         <li><span class="check">✓</span> Email summary (900 / month)</li>
         <li><span class="check">✓</span> Attachment analysis (50 / month)</li>
-        <li><span class="check">✓</span> 900 translations / month</li>
-        <li><span class="check">✓</span> Industry expertise (15 fields)</li>
-        <li><span class="check">✓</span> Priority support</li>
+        <li><span class="check">✓</span> 900 translations / month · 3 languages per email</li>
         <li><span class="check">✓</span> Cancel anytime</li>
       </ul>
       <button class="btn-plan filled" onclick="openCheckout('pri_01m3ves79fw6t8n5gdtxy860ks')">Get Pro</button>
@@ -1785,7 +1778,7 @@
         <li><span class="check">✓</span> Document & card generation (50 / month)</li>
         <li><span class="check">✓</span> PDF, Word & Excel export</li>
         <li><span class="check">✓</span> Email summary (1,000 / month)</li>
-        <li><span class="check">✓</span> 1,000 translations / month</li>
+        <li><span class="check">✓</span> 1,000 translations / month · 4 languages per email</li>
         <li><span class="check">✓</span> Cancel anytime</li>
       </ul>
       <a href="mailto:hello@mailmind.yongcha.app?subject=MailMind%20Pro%2B" class="btn-plan outline">Contact us</a>
@@ -1844,12 +1837,6 @@
         <td><span class="no">✗</span></td>
       </tr>
       <tr>
-        <td>Style learning</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
         <td>Attachment analysis (PDF, Office, images)</td>
         <td><span class="yes">✓</span></td>
         <td><span class="no">✗</span></td>
@@ -1898,7 +1885,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">What documents can MailMind create? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Quotes, invoices, purchase orders, contracts, NDAs, proposals, reports, cover letters, formal requests and greeting cards — over 1,200 document types across 26 countries, in any of 17 languages. Business documents come with calculated totals, tables and charts, and download as PDF, Word, Excel or HTML. Document generation is included in Pro+ (50 / month).</div>
+      <div class="faq-a">Quotes, invoices, purchase orders, contracts, NDAs, proposals, reports, cover letters, formal requests and greeting cards — over 1,400 document types across 26 countries, in any of 17 languages. Business documents come with calculated totals, tables and charts, and download as PDF, Word, Excel or HTML. Document generation is included in Pro+ (50 / month).</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Are generated contracts legally valid? <span class="faq-arrow">+</span></div>
