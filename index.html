@@ -372,7 +372,7 @@
     .shot-docs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
     .shot-docs .shot-frame:nth-child(2) { margin-top: 48px; }
     .shot-docs figcaption, .how-cap { text-align: center; font-size: 12px; color: #a9a5d0; margin-top: 10px; position: relative; z-index: 1; }
-    @media (max-width: 600px) { .shot-docs { grid-template-columns: 1fr; } .shot-docs .shot-frame:nth-child(2), .shot-docs figure:nth-child(2) { margin-top: 0; } .how { padding: 64px 16px 72px; } .how-text h3 { font-size: 24px; } }
+    @media (max-width: 600px) { .shot-docs { grid-template-columns: 1fr; } .shot-docs figure:nth-child(2) { display:none; } .shot-docs .shot-frame:nth-child(2), .shot-docs figure:nth-child(2) { margin-top: 0; } .how { padding: 64px 16px 72px; } .how-text h3 { font-size: 24px; } }
     .how-note { text-align: center; color: #8f8bb8; font-size: 13px; margin-top: 56px; }
 
     /* PRICING */
@@ -570,8 +570,7 @@
   <div class="nav-links">
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
-    <a href="#documents">Documents</a>
-    <a href="#pricing">Pricing</a>
+        <a href="#pricing">Pricing</a>
     <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-nav">Add to Chrome — Free</a>
   </div>
 </nav>
@@ -583,11 +582,11 @@
     <div class="hero-badge">✦ Chrome extension · 17 languages · 6 email platforms</div>
     <h1>Every email,<br><span class="pink">perfect.</span></h1>
     <p class="hero-sub">
-      Replies that sound like you wrote them — right inside Gmail, Outlook, Naver and more. No copy-paste, no AI-speak. The reply is written in the sender's language, with a copy in yours so you know exactly what you're sending. 17 languages, one click.
+      Replies in the sender's language — with a copy in yours, so you know exactly what you're sending. Right inside Gmail, Outlook and four more inboxes. One click.
     </p>
     <div class="hero-cta">
       <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-primary">Add to Chrome — It's Free</a>
-      <a href="#demo" class="btn-secondary">See how it works ↓</a>
+      <a href="#how" class="btn-secondary">See how it works ↓</a>
     </div>
     <p class="hero-signin">Chrome extension: sign in with the Google account in your Chrome. Mobile apps for Android and iPhone are coming soon.</p>
     <div class="store-badges">
@@ -598,15 +597,13 @@
     <div class="hero-trust">
       <span><span class="dot">✓</span> Free to start, no card</span>
       <span><span class="dot">✓</span> Emails not kept on our servers</span>
-      <span><span class="dot">✓</span> No copy-paste — works in your inbox</span>
-      <span><span class="dot">✓</span> 17 languages</span>
     </div>
   </div>
   <div class="hero-visual">
     <div class="phone phone-back">
       <picture>
-        <source srcset="/img/app-reply-panel.webp" type="image/webp">
-        <img src="/img/app-reply-panel.jpg" width="600" height="1304" alt="MailMind reply panel with Reply, Analysis and Doc Gen tabs, Compare Replies and Smart Reply" loading="eager" decoding="async">
+        <source srcset="/img/app-detail-en.webp" type="image/webp">
+        <img src="/img/app-detail-en.jpg" width="600" height="1304" alt="MailMind app: an English quote request with the reply panel" loading="eager" decoding="async">
       </picture>
     </div>
     <div class="phone phone-front">
@@ -621,32 +618,6 @@
   </div>
 </section>
 
-<!-- PAIN POINTS -->
-<section class="pain">
-  <p class="section-label">Why MailMind</p>
-  <h2 class="section-title">Email is hard. We fix that.</h2>
-  <div class="pain-grid">
-    <div class="pain-card">
-      <div class="pain-icon">🌍</div>
-      <h3>Foreign language email</h3>
-      <p>Got an email in Japanese, Portuguese, or Arabic? MailMind reads it, explains it in your language, and writes a perfect reply in theirs.</p>
-      <div class="solution">✓ Any language combination</div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">✍️</div>
-      <h3>Don't know what to say</h3>
-      <p>Even in your own language, some emails are hard — complaints, rejections, apologies. MailMind finds the right words instantly.</p>
-      <div class="solution">✓ 8 tones for every situation</div>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">⏱️</div>
-      <h3>No time to write</h3>
-      <p>The average professional spends 3 hours a day on email. MailMind cuts that to seconds — without sounding like a robot.</p>
-      <div class="solution">✓ One click, done</div>
-    </div>
-  </div>
-</section>
-
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
  <div class="how-inner">
@@ -658,8 +629,7 @@
     <div class="how-text">
       <div class="how-num">1</div>
       <h3>Open the email. MailMind is already there.</h3>
-      <p>The panel sits next to the email you have open — no copy-paste, no new tab.</p>
-      <ul><li>Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan</li><li>Detects the sender's language and country on its own</li><li>Reads only the email you open, only when you click</li></ul>
+      <p>The panel sits next to the email in Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan — no copy-paste, no new tab. It reads only the email you open, only when you click.</p>
     </div>
     <div class="how-shot"><div class="shot-frame"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width: 600px)" srcset="img/how-open-m.webp" type="image/webp"><source media="(max-width: 600px)" srcset="img/how-open-m.jpg"><source srcset="img/how-open.webp" type="image/webp"><img src="img/how-open.jpg" alt="MailMind panel next to an open email in a browser mail inbox" loading="lazy" width="1400" height="520"></picture></div></div>
   </div>
@@ -668,8 +638,8 @@
     <div class="how-text">
       <div class="how-num">2</div>
       <h3>One click: a reply in <em>their</em> language — and a copy in yours.</h3>
-      <p>MailMind writes the reply in proper Japanese business style. Right above it, you read the same reply in your own language, so you know exactly what you're sending.</p>
-      <ul><li>17 languages, with each country's business manners</li><li>Your-language copy is included — it doesn't use your translations</li><li>Want options? Compare 2–3 versions, or Smart Reply with a summary first</li></ul>
+      <p>Proper Japanese business style — and right above it, the same reply in your language, so you know exactly what you're sending.</p>
+      <ul><li>17 languages, each country's business manners</li><li>Want options? Compare 2–3 versions, or Smart Reply</li></ul>
     </div>
     <div class="how-shot"><div class="shot-frame shot-panel"><picture><source srcset="img/how-reply.webp" type="image/webp"><img src="img/how-reply.jpg" alt="Japanese reply with an English copy above it in the MailMind panel" loading="lazy" width="724" height="1394"></picture></div></div>
   </div>
@@ -678,8 +648,7 @@
     <div class="how-text">
       <div class="how-num">3</div>
       <h3>Attachment? Analyze it before you answer.</h3>
-      <p>Tap <b>Analysis</b> and MailMind reads the PDF, spreadsheet or scan, shows the key facts in your language — and flags what's missing — then writes the reply from them.</p>
-      <ul><li>PDF, Word, Excel/CSV, images and scanned papers</li><li>Totals and per-group values calculated from the actual rows</li></ul>
+      <p>Tap <b>Analysis</b>: MailMind reads the PDF, spreadsheet, scan or zip, shows the key facts in your language, flags what's missing — then writes the reply from them.</p>
       <span class="how-tag">Pro &amp; Pro+</span>
     </div>
     <div class="how-shot"><div class="shot-frame shot-panel"><picture><source srcset="img/how-analysis.webp" type="image/webp"><img src="img/how-analysis.jpg" alt="Attachment analysis card with key facts and missing information" loading="lazy" width="724" height="740"></picture></div></div>
@@ -689,7 +658,7 @@
     <div class="how-text">
       <div class="how-num">4</div>
       <h3>Insert, check, send.</h3>
-      <p>The reply drops into the mail's own reply box with its paragraphs intact. Edit anything you like — <b>you</b> press Send. MailMind never sends on its own.</p>
+      <p>The reply drops into the mail's own reply box. Edit anything — <b>you</b> press Send. MailMind never sends on its own.</p>
     </div>
     <div class="how-shot"><div class="shot-frame"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width: 600px)" srcset="img/how-insert-m.webp" type="image/webp"><source media="(max-width: 600px)" srcset="img/how-insert-m.jpg"><source srcset="img/how-insert.webp" type="image/webp"><img src="img/how-insert.jpg" alt="The Japanese reply inserted into the reply box" loading="lazy" width="1400" height="340"></picture></div></div>
   </div>
@@ -698,8 +667,7 @@
     <div class="how-text">
       <div class="how-num">✦</div>
       <h3>Need the quote too? Make it in their country's format.</h3>
-      <p>From the same email, the <b>Document</b> tab builds a real quote, invoice, contract or letter — the layout the other side is used to, in their language, with totals calculated. Attach it to your reply with a cover note already written.</p>
-      <ul><li>1,400+ document types across 26 countries</li><li>PDF, Word and Excel (with live formulas)</li></ul>
+      <p>The <b>Document</b> tab builds a quote, invoice, contract or letter in the layout the other side is used to — 1,400+ types across 26 countries, as PDF, Word or Excel, attached to your reply.</p>
       <span class="how-tag">Pro+</span>
     </div>
     <div class="how-shot"><div class="shot-docs">
@@ -712,8 +680,227 @@
  </div>
 </section>
 
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <p class="section-label">Pricing</p>
+  <h2 class="section-title">Simple, transparent pricing</h2>
+  <div class="pricing-grid">
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$0 <span>/ free</span></div>
+      <div class="plan-limit">35 replies in your first 30 days</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> 35 AI replies in the first 30 days, then 10 / month</li>
+        <li><span class="check">✓</span> AI Compose & AI Brief</li>
+        <li><span class="check">✓</span> Email summary (50 / month)</li>
+        <li><span class="check">✓</span> 50 translations / month · 1 language per email</li>
+        <li><span class="check">✓</span> Reply polish (Refine)</li>
+        <li><span class="check">✓</span> 17 languages supported</li>
+        <li><span class="check">✓</span> 8 tone options</li>
+        <li><span class="check">✓</span> Culture & industry detection</li>
+        <li><span class="check">✓</span> All 6 email platforms</li>
+        <li><span class="check">✓</span> No credit card required</li>
+      </ul>
+      <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-plan outline">Start Free</a>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price">$15 <span>/ month</span></div>
+      <div class="plan-limit">200 replies / month</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> 200 AI replies / month</li>
+        <li><span class="check">✓</span> All 6 email platforms</li>
+        <li><span class="check">✓</span> 17 languages supported</li>
+        <li><span class="check">✓</span> 8 tone options</li>
+        <li><span class="check">✓</span> AI Compose (write from scratch)</li>
+        <li><span class="check">✓</span> Reply polish (Refine)</li>
+        <li><span class="check">✓</span> 2 versions to compare</li>
+        <li><span class="check">✓</span> Email summary (500 / month)</li>
+        <li><span class="check">✓</span> 500 translations / month · 2 languages per email</li>
+        <li><span class="check">✓</span> Quick language switch</li>
+        <li><span class="check">✓</span> Signature & saved phrases</li>
+        <li><span class="check">✓</span> Cancel anytime</li>
+      </ul>
+      <button class="btn-plan outline" onclick="openCheckout('pri_01m3ve7jkhcnr2jmfwz02yby6e')">Get Basic</button>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge-top">Most Popular</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">$25 <span>/ month</span></div>
+      <div class="plan-limit">300 replies / month</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> 300 AI replies / month</li>
+        <li><span class="check">✓</span> All 6 email platforms</li>
+        <li><span class="check">✓</span> Everything in Basic</li>
+        <li><span class="check">✓</span> 3 versions to compare</li>
+        <li><span class="check">✓</span> Smart Reply (summary + translate)</li>
+        <li><span class="check">✓</span> Email summary (900 / month)</li>
+        <li><span class="check">✓</span> Attachment analysis (50 / month)</li>
+        <li><span class="check">✓</span> 900 translations / month · 3 languages per email</li>
+        <li><span class="check">✓</span> Cancel anytime</li>
+      </ul>
+      <button class="btn-plan filled" onclick="openCheckout('pri_01m3ves79fw6t8n5gdtxy860ks')">Get Pro</button>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Pro+</div>
+      <div class="plan-price">$39 <span>/ month</span></div>
+      <div class="plan-limit">500 replies / month</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> 500 AI replies / month</li>
+        <li><span class="check">✓</span> Everything in Pro</li>
+        <li><span class="check">✓</span> Attachment analysis (150 / month)</li>
+        <li><span class="check">✓</span> Document & card generation (50 / month)</li>
+        <li><span class="check">✓</span> PDF, Word & Excel export</li>
+        <li><span class="check">✓</span> Email summary (1,000 / month)</li>
+        <li><span class="check">✓</span> 1,000 translations / month · 4 languages per email</li>
+        <li><span class="check">✓</span> Cancel anytime</li>
+      </ul>
+      <a href="mailto:hello@mailmind.yongcha.app?subject=MailMind%20Pro%2B" class="btn-plan outline">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<details class="cmp-fold"><summary>Compare MailMind with other tools ▾</summary>
+<!-- COMPARE -->
+<section class="compare">
+  <p class="section-label">Comparison</p>
+  <h2 class="section-title">Why MailMind wins</h2>
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="compare-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th class="ours">MailMind</th>
+        <th>Tool A ($27–47)</th>
+        <th>Tool B ($19)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6 email platforms (Gmail, Outlook, iCloud, Naver, Yahoo, Yahoo Japan)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>AI Compose (write emails from scratch)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Any language combination (17 languages)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Cultural knowledge (business customs)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>3-version reply comparison</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Thread summary</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Attachment analysis (PDF, Office, images)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Document generation (PDF, Word, Excel)</td>
+        <td><span class="yes">✓</span></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td style="color:var(--green);font-weight:700">$15–39/mo</td>
+        <td>$27–47/mo</td>
+        <td>$19/mo</td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+
+</details>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <p class="section-label">Features</p>
+  <h2 class="section-title">Everything else in the box</h2>
+
+  <style>
+  .core-glance { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; max-width:1000px; margin:-24px auto 40px; }
+  .core-item { display:block; background:var(--white); border:1.5px solid var(--sky-deep); border-radius:14px; padding:16px 14px; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
+  .core-item:hover { border-color:var(--pink); transform:translateY(-2px); }
+  .core-item .ci-icon { font-size:24px; line-height:1; margin-bottom:8px; }
+  .core-item .ci-name { font-size:14px; font-weight:700; margin-bottom:4px; }
+  .core-item .ci-desc { font-size:12px; color:var(--text-2); line-height:1.5; }
+  .core-item .ci-plan { display:inline-block; margin-top:8px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--green-light); color:var(--green); }
+  .core-item .ci-plan.pro { background:var(--pink-light); color:var(--pink); }
+  .core-item .ci-plan.proplus { background:var(--gold-light); color:#b8860b; }
+  </style>
+  <div class="core-glance" aria-label="MailMind core features at a glance">
+    <a class="core-item" href="#features"><div class="ci-icon">✉️</div><div class="ci-name">AI Reply</div><div class="ci-desc">Business, formal, friend or romantic — the right voice in 17 languages.</div><span class="ci-plan">All plans</span></a>
+    <a class="core-item" href="#features"><div class="ci-icon">🌐</div><div class="ci-name">AI Translation</div><div class="ci-desc">Read any email in your language, send the reply in theirs.</div><span class="ci-plan">All plans</span></a>
+    <a class="core-item" href="#how"><div class="ci-icon">🔍</div><div class="ci-name">Document Analysis</div><div class="ci-desc">Contracts, invoices, resumes and reports — key facts in seconds.</div><span class="ci-plan pro">Pro &amp; above</span></a>
+    <a class="core-item" href="#how"><div class="ci-icon">📄</div><div class="ci-name">Document Generation</div><div class="ci-desc">Quotes, contracts, proposals and reports in each country's format.</div><span class="ci-plan proplus">Pro+</span></a>
+    <a class="core-item" href="#features"><div class="ci-icon">✨</div><div class="ci-name">Smart Reply</div><div class="ci-desc">Summary first, then several reply versions to compare and pick.</div><span class="ci-plan pro">Pro &amp; above</span></a>
+    <a class="core-item" href="#features"><div class="ci-icon">📬</div><div class="ci-name">All your accounts</div><div class="ci-desc">Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan in one place.</div><span class="ci-plan">All plans</span></a>
+  </div>
+
+    <div class="app-showcase">
+    <div class="app-showcase-visual">
+      <div class="phone" style="aspect-ratio:600/982">
+        <picture>
+          <source srcset="/img/app-detail-en-card.webp" type="image/webp">
+          <img src="/img/app-detail-en-card.jpg" width="600" height="982" alt="MailMind mobile app: an English quote request with the reply panel — AI Reply, Compare Replies, Smart Reply, translation and summary" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+    <div>
+      <div class="feature-hero-badge">📱 MOBILE APP · COMING SOON</div>
+      <h3>The same MailMind on your phone</h3>
+      <p>Android and iPhone apps with all six accounts in one inbox — the same replies, translation, analysis and documents as the extension.</p>
+      <ul>
+        <li>AI Compose: describe the email in one line, get a full draft</li>
+        <li>Read, unread and delete stay in sync with your real mailbox</li>
+        <li>Sign in with Google, Apple (iPhone) or just your email address</li>
+      </ul>
+    </div>
+  </div>
+  <div class="features-grid mini">
+    <div class="feature-card"><div class="feature-icon">✍️</div><h3>Your signature, as you wrote it</h3><p>Added to business replies only — never to friends or family.</p></div>
+    <div class="feature-card"><div class="feature-icon">📝</div><h3>Summaries</h3><p>A long thread in a few lines, in your language. Every plan.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔒</div><h3>Your data stays yours</h3><p>Email is processed when you ask and not kept on our servers. Never sold or used to train AI. <a href="/privacy.html">Privacy Policy</a></p></div>
+  </div>
+</section>
+
+<!-- DEMO (collapsed) -->
+<style>
+.features-grid.mini .feature-card{padding:18px 20px}.features-grid.mini .feature-icon{font-size:24px;margin-bottom:6px}.features-grid.mini h3{margin-bottom:4px}
+.demo-fold{max-width:1100px;margin:0 auto;padding:32px 24px 48px}
+.demo-fold>summary{list-style:none;cursor:pointer;text-align:center;font-weight:700;color:var(--pink);font-size:16px;padding:16px;border:1.5px dashed var(--pink);border-radius:14px;background:#fff}
+.demo-fold>summary::-webkit-details-marker{display:none}
+.demo-fold[open]>summary{margin-bottom:8px}
+.cmp-fold{max-width:1000px;margin:0 auto;padding:0 16px 56px}
+.cmp-fold>summary{list-style:none;cursor:pointer;text-align:center;font-weight:700;color:var(--text);font-size:15px;padding:14px;border:1.5px solid var(--border);border-radius:12px;background:#fff}
+.cmp-fold>summary::-webkit-details-marker{display:none}
+</style>
+<details class="demo-fold" id="demo"><summary>▶ Try the interactive demo</summary>
 <!-- DEMO -->
-<section class="demo-section" id="demo">
+<section class="demo-section" id="demo-inner">
   <p class="section-label">Live Demo</p>
   <h2 class="section-title" style="margin-bottom:8px">What you see inside Gmail, Outlook & more</h2>
   <p style="text-align:center;color:var(--text-3);font-size:14px;margin-bottom:16px">Try it — choose your plan, generate a reply in your language</p>
@@ -1525,435 +1712,7 @@
   </script>
 </section>
 
-<!-- FEATURES -->
-<section class="features" id="features">
-  <p class="section-label">Features</p>
-  <h2 class="section-title">Everything your inbox needs</h2>
-
-  <style>
-  .core-glance { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; max-width:1000px; margin:-24px auto 40px; }
-  .core-item { display:block; background:var(--white); border:1.5px solid var(--sky-deep); border-radius:14px; padding:16px 14px; text-decoration:none; color:var(--text); transition:border-color .15s, transform .15s; }
-  .core-item:hover { border-color:var(--pink); transform:translateY(-2px); }
-  .core-item .ci-icon { font-size:24px; line-height:1; margin-bottom:8px; }
-  .core-item .ci-name { font-size:14px; font-weight:700; margin-bottom:4px; }
-  .core-item .ci-desc { font-size:12px; color:var(--text-2); line-height:1.5; }
-  .core-item .ci-plan { display:inline-block; margin-top:8px; font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--green-light); color:var(--green); }
-  .core-item .ci-plan.pro { background:var(--pink-light); color:var(--pink); }
-  .core-item .ci-plan.proplus { background:var(--gold-light); color:#b8860b; }
-  </style>
-  <div class="core-glance" aria-label="MailMind core features at a glance">
-    <a class="core-item" href="#features"><div class="ci-icon">✉️</div><div class="ci-name">AI Reply</div><div class="ci-desc">Business, formal, friend or romantic — the right voice in 17 languages.</div><span class="ci-plan">All plans</span></a>
-    <a class="core-item" href="#features"><div class="ci-icon">🌐</div><div class="ci-name">AI Translation</div><div class="ci-desc">Read any email in your language, send the reply in theirs.</div><span class="ci-plan">All plans</span></a>
-    <a class="core-item" href="#documents"><div class="ci-icon">🔍</div><div class="ci-name">Document Analysis</div><div class="ci-desc">Contracts, invoices, resumes and reports — key facts in seconds.</div><span class="ci-plan pro">Pro &amp; above</span></a>
-    <a class="core-item" href="#documents"><div class="ci-icon">📄</div><div class="ci-name">Document Generation</div><div class="ci-desc">Quotes, contracts, proposals and reports in each country's format.</div><span class="ci-plan proplus">Pro+</span></a>
-    <a class="core-item" href="#features"><div class="ci-icon">✨</div><div class="ci-name">Smart Reply</div><div class="ci-desc">Summary first, then several reply versions to compare and pick.</div><span class="ci-plan pro">Pro &amp; above</span></a>
-    <a class="core-item" href="#features"><div class="ci-icon">📬</div><div class="ci-name">All your accounts</div><div class="ci-desc">Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan in one place.</div><span class="ci-plan">All plans</span></a>
-  </div>
-
-  <!-- 핵심 3가지 크게 -->
-  <style>
-  .features-hero {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  .feature-hero-card {
-    background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
-    border: 2px solid var(--pink-light);
-    border-radius: 16px;
-    padding: 28px 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  .feature-hero-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--pink), var(--gold));
-    border-radius: 16px 16px 0 0;
-  }
-  .feature-hero-badge {
-    display: inline-block;
-    background: var(--pink-light);
-    color: var(--pink);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-  .feature-hero-card .feature-icon { font-size: 36px; margin-bottom: 14px; }
-  .feature-hero-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-  .feature-hero-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
-  .feature-hero-card ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
-  .feature-hero-card ul li { font-size: 13px; color: var(--text-2); display: flex; align-items: center; gap: 6px; }
-  .feature-hero-card ul li::before { content: "✓"; color: var(--green); font-weight: 700; }
-  </style>
-
-  <div class="features-hero">
-    <div class="feature-hero-card">
-      <div class="feature-hero-badge">⭐ CORE</div>
-      <div class="feature-icon">🌍</div>
-      <h3>17 Languages, any pair</h3>
-      <p>Japanese to Korean, Arabic to German, Portuguese to English — any direction, any combination. Replies sound like a native speaker.</p>
-      <ul>
-        <li>Culture & business customs auto-applied</li>
-        <li>Japanese Keigo, Arabic formalities, Brazilian warmth</li>
-        <li>17 languages: EN / KO / JA / ZH / ES / FR / DE / PT / AR + 8 more</li>
-      </ul>
-    </div>
-    <div class="feature-hero-card">
-      <div class="feature-hero-badge">⭐ CORE</div>
-      <div class="feature-icon">✨</div>
-      <h3>Smart Reply</h3>
-      <p>Can't read the language at all? Smart Reply reads the email, shows you a summary in your language, then writes the perfect reply in theirs.</p>
-      <ul>
-        <li>Summary in your language first</li>
-        <li>3 reply versions to choose from</li>
-        <li>One-click translation into sender's language</li>
-      </ul>
-    </div>
-    <div class="feature-hero-card">
-      <div class="feature-hero-badge">⭐ CORE</div>
-      <div class="feature-icon">🏭</div>
-      <h3>Industry expertise</h3>
-      <p>MailMind detects your industry and applies the right terminology and tone — automatically, without any setup.</p>
-      <ul>
-        <li>Trade: Incoterms, LC, FOB — applied correctly</li>
-        <li>Legal: shall/may/will distinction</li>
-        <li>15+ fields: IT, finance, medical, crypto & more</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 다국어 답장 스크린샷 -->
-  <div class="app-showcase reverse">
-    <div class="app-showcase-visual">
-      <picture>
-        <source srcset="/img/app-reply-ar.webp" type="image/webp">
-        <img class="shot-card" src="/img/app-reply-ar.jpg" width="640" height="699" alt="MailMind AI Reply card with an Arabic business reply, reply language set to Arabic" loading="lazy" decoding="async">
-      </picture>
-    </div>
-    <div>
-      <div class="feature-hero-badge">🌍 ANY LANGUAGE</div>
-      <h3>Reply in their language, not yours</h3>
-      <p>Pick the reply language — or leave it on Auto Detect — and choose how well you know the person. MailMind writes the greeting, the body and the sign-off the way a native speaker would.</p>
-      <ul>
-        <li>See the reply in your own language under it — included, it doesn't use your translations</li>
-        <li>17 reply languages, including Arabic, Japanese, Hindi and Thai</li>
-        <li>Business, Formal, Friend / Casual or Romantic — one tap</li>
-        <li>The panel follows your Chrome language automatically — or pick one of 17</li>
-        <li>Turn the email into a document or export the reply right from the card</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 모바일 앱 스크린샷 -->
-  <div class="app-showcase">
-    <div class="app-showcase-visual">
-      <div class="phone">
-        <picture>
-          <source srcset="/img/app-compose.webp" type="image/webp">
-          <img src="/img/app-compose.jpg" width="600" height="1304" alt="MailMind mobile app AI Compose screen: describe the email you want and pick tone and language" loading="lazy" decoding="async">
-        </picture>
-      </div>
-    </div>
-    <div>
-      <div class="feature-hero-badge">📱 MOBILE APP</div>
-      <h3>Your inbox, in your pocket</h3>
-      <p>Coming soon to Android and iPhone: the same AI replies, translation and documents, with your Gmail, Outlook, iCloud, Naver, Yahoo and Yahoo Japan accounts in one inbox.</p>
-      <ul>
-        <li>AI Compose: describe the email in one line, get a full draft</li>
-        <li>Pick the tone and the language, or let MailMind detect them</li>
-        <li>Read, unread and delete stay in sync with your real mailbox, across all six accounts</li>
-        <li>Sign in with Google, Apple (iPhone) or just your email address — no Google account needed</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 나머지 기능 작게 -->
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <h3>8 tones, your situation</h3>
-      <p>Professional, Friendly, Concise, Detailed, Decline, Thankful, Apologetic, Acknowledge. One tap, perfect tone.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔒</div>
-      <h3>Your data stays yours</h3>
-      <p>Email content is processed when you ask and not kept on our servers afterwards. Never sold, never used for advertising or to train AI models. See our <a href="/privacy.html">Privacy Policy</a>.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>6 Email Platforms</h3>
-      <p>Works inside Gmail, Outlook, iCloud Mail, Naver Mail, Yahoo Mail, and Yahoo Japan — no tab switching. MailMind panel appears automatically when you open any email.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">✨</div>
-      <h3>AI Compose (Write New)</h3>
-      <p>Blank canvas? Use AI Write to compose a full email from scratch. Describe what you want to say — MailMind writes the whole thing in any language and tone.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔀</div>
-      <h3>Quick language switch</h3>
-      <p>Generated your reply in Korean? Switch to Japanese, Arabic, or Italian in one click — no re-generation, no extra reply used.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">✍️</div>
-      <h3>Signature & templates</h3>
-      <p>Save your signature once — it's added to your business replies, never to messages for friends or family. Store your most-used phrases as templates — insert with one click.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📝</div>
-      <h3>Thread summary</h3>
-      <p>Long email chain? Summarize the whole thread in your language in seconds. Know exactly what to reply before you type a word. Every plan: 50 / month on Starter, 500 on Basic, 900 on Pro, 1,000 on Pro+.</p>
-    </div>
-  </div>
-</section>
-
-<!-- DOCUMENTS: analysis + generation -->
-<section class="docs" id="documents">
-  <style>
-  .docs { background: var(--white); padding: 80px 24px; }
-  .docs-sub { text-align:center; font-size:16px; color:var(--text-2); line-height:1.7; max-width:640px; margin:-32px auto 40px; }
-  .docs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; max-width:1000px; margin:0 auto; }
-  .docs-card { border:2px solid var(--sky-deep); border-radius:18px; padding:28px 24px; background:linear-gradient(180deg,#fff 0%,#f8fbff 100%); }
-  .docs-card.gen { border-color: var(--pink-light); background:linear-gradient(180deg,#fff 0%,#fff7fb 100%); }
-  .docs-card .dc-top { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
-  .docs-card .dc-icon { font-size:34px; line-height:1; }
-  .docs-card .dc-plan { font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; background:var(--pink-light); color:var(--pink); }
-  .docs-card .dc-plan.gold { background:var(--gold-light); color:#b8860b; }
-  .docs-card h3 { font-size:22px; font-weight:800; margin-bottom:8px; }
-  .docs-card > p { font-size:14px; color:var(--text-2); line-height:1.7; }
-  .docs-card ul { list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:8px; }
-  .docs-card ul li { font-size:13.5px; color:var(--text-2); line-height:1.55; padding-left:20px; position:relative; }
-  .docs-card ul li::before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:700; }
-  .docs-card .dc-label { font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-3); margin:18px 0 8px; }
-  .chip-row { display:flex; flex-wrap:wrap; gap:6px; }
-  .chip-row span { font-size:12px; padding:4px 10px; border-radius:20px; background:var(--sky); color:var(--text); border:1px solid var(--sky-deep); }
-  .docs-flow { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; max-width:1000px; margin:28px auto 0; }
-  .docs-step { background:var(--sky); border-radius:14px; padding:18px 16px; }
-  .docs-step .ds-n { display:inline-flex; width:24px; height:24px; border-radius:50%; background:var(--pink); color:#fff; font-size:12px; font-weight:700; align-items:center; justify-content:center; margin-bottom:8px; }
-  .docs-step b { display:block; font-size:14px; margin-bottom:4px; }
-  .docs-step span { font-size:13px; color:var(--text-2); line-height:1.55; }
-  .docs-cases { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; max-width:1000px; margin:28px auto 0; }
-  .docs-case { border:1.5px solid var(--sky-deep); border-radius:14px; padding:16px; background:#fff; }
-  .docs-case .who { font-size:12px; font-weight:700; color:var(--pink); margin-bottom:6px; }
-  .docs-case p { font-size:13px; color:var(--text-2); line-height:1.6; }
-  .docs-note { text-align:center; font-size:12px; color:var(--text-3); max-width:720px; margin:24px auto 0; line-height:1.6; }
-  </style>
-
-  <p class="section-label">Documents</p>
-  <h2 class="section-title">Not just replies. The paperwork, too.</h2>
-  <p class="docs-sub">The email says "please review the attached contract" or "can you send a quote?" MailMind reads the file for you — and writes the document they asked for, in their country's format and language.</p>
-
-  <div class="docs-grid">
-    <div class="docs-card">
-      <div class="dc-top"><div class="dc-icon">🔍</div><span class="dc-plan">Pro &amp; above</span></div>
-      <h3>Document Analysis</h3>
-      <p>Tap <b>AI Analysis</b> on an attachment and get the points that matter — amounts, dates, deadlines, obligations — without reading 20 pages. Then reply with those facts already in the answer.</p>
-      <ul>
-        <li><b>Contracts:</b> parties, payment terms, deadlines and clauses worth a second look</li>
-        <li><b>Invoices &amp; spreadsheets:</b> line items, totals and per-group values, calculated from the actual rows</li>
-        <li><b>Scanned papers &amp; photos:</b> read too — numbers that look uncertain are flagged for you to check</li>
-        <li><b>Resumes:</b> experience, skills and fit, summarized in your language</li>
-        <li><b>Reports &amp; proposals:</b> key figures and conclusions in a few lines</li>
-        <li><b>Analysis Reply:</b> analyze the email first, then answer every point it raises</li>
-      </ul>
-      <div class="dc-label">Reads</div>
-      <div class="chip-row"><span>PDF</span><span>Word</span><span>Excel / CSV</span><span>PowerPoint</span><span>Images</span><span>Hangul (HWP)</span><span>OpenDocument</span><span>Text &amp; EML</span><span>Scans</span><span>ZIP (app)</span></div>
-    </div>
-
-    <div class="docs-card gen">
-      <div class="dc-top"><div class="dc-icon">📄</div><span class="dc-plan gold">Pro+</span></div>
-      <h3>Document Generation</h3>
-      <p>Turn an email into a ready-to-send document. MailMind picks the right document for the request and lays it out the way it's done in the recipient's country — with tables, totals and charts.</p>
-      <ul>
-        <li><b>1,400+ real document types for 26 countries</b> — 請求書 for Japan, Rechnung for Germany, Invoice for the US</li>
-        <li><b>Writing to someone abroad?</b> Quotes and invoices follow the layout they're used to — Japanese, international English or European style — in their language</li>
-        <li><b>Any of 17 languages,</b> whatever language the email came in</li>
-        <li><b>Quotes and invoices that add up:</b> line totals, tax and grand total calculated, Excel with live formulas</li>
-        <li><b>Edit before you send</b> — tap the document and fix any word</li>
-        <li><b>Attach it to your reply</b> with a cover note already written, or drop a greeting card into the email body</li>
-      </ul>
-      <div class="dc-label">Popular</div>
-      <div class="chip-row"><span>Quote</span><span>Invoice</span><span>Contract</span><span>NDA</span><span>Proposal</span><span>Report</span><span>Purchase order</span><span>Cover letter</span><span>Greeting card</span></div>
-      <div class="dc-label">Export</div>
-      <div class="chip-row"><span>PDF</span><span>Word</span><span>Excel</span><span>HTML</span></div>
-    </div>
-  </div>
-
-  <div class="docs-flow" aria-label="How document generation works">
-    <div class="docs-step"><div class="ds-n">1</div><b>Open the email</b><span>"Could you send us a quote for 300 units?"</span></div>
-    <div class="docs-step"><div class="ds-n">2</div><b>Tap Doc Gen</b><span>MailMind detects the document, the country and the language.</span></div>
-    <div class="docs-step"><div class="ds-n">3</div><b>Review &amp; edit</b><span>Check the figures, fill anything the email didn't say, tweak the wording.</span></div>
-    <div class="docs-step"><div class="ds-n">4</div><b>Send</b><span>Attached to your reply as PDF, Word or Excel — with the cover note written.</span></div>
-  </div>
-
-  <div class="docs-cases">
-    <div class="docs-case"><div class="who">🧑‍💼 Freelancers</div><p>A client asks for a price — send a clean quote and a service contract the same hour.</p></div>
-    <div class="docs-case"><div class="who">🏪 Small businesses</div><p>Invoices, purchase orders and delivery notes for overseas buyers, in their format.</p></div>
-    <div class="docs-case"><div class="who">🏢 Office teams</div><p>Turn a long thread into a report or proposal with tables and charts for the meeting.</p></div>
-    <div class="docs-case"><div class="who">🎓 Students &amp; job seekers</div><p>Cover letters, study plans and formal requests written the way each country expects.</p></div>
-  </div>
-
-  <p class="docs-note">Generated documents are AI drafts. MailMind only fills in names, dates and amounts found in the email — anything missing is left for you to add. Contracts and legal documents are not legal advice; have them reviewed before signing.</p>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <p class="section-label">Pricing</p>
-  <h2 class="section-title">Simple, transparent pricing</h2>
-  <div class="pricing-grid">
-    <div class="plan-card">
-      <div class="plan-name">Starter</div>
-      <div class="plan-price">$0 <span>/ free</span></div>
-      <div class="plan-limit">35 replies in your first 30 days</div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> 35 AI replies in the first 30 days, then 10 / month</li>
-        <li><span class="check">✓</span> AI Compose & AI Brief</li>
-        <li><span class="check">✓</span> Email summary (50 / month)</li>
-        <li><span class="check">✓</span> 50 translations / month · 1 language per email</li>
-        <li><span class="check">✓</span> Reply polish (Refine)</li>
-        <li><span class="check">✓</span> 17 languages supported</li>
-        <li><span class="check">✓</span> 8 tone options</li>
-        <li><span class="check">✓</span> Culture & industry detection</li>
-        <li><span class="check">✓</span> All 6 email platforms</li>
-        <li><span class="check">✓</span> No credit card required</li>
-      </ul>
-      <a href="https://chromewebstore.google.com/detail/mailmind-ai-smart-email-replies/bbplaficbmmoaaogdoninbhlkhcemofo" class="btn-plan outline">Start Free</a>
-    </div>
-    <div class="plan-card">
-      <div class="plan-name">Basic</div>
-      <div class="plan-price">$15 <span>/ month</span></div>
-      <div class="plan-limit">200 replies / month</div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> 200 AI replies / month</li>
-        <li><span class="check">✓</span> All 6 email platforms</li>
-        <li><span class="check">✓</span> 17 languages supported</li>
-        <li><span class="check">✓</span> 8 tone options</li>
-        <li><span class="check">✓</span> AI Compose (write from scratch)</li>
-        <li><span class="check">✓</span> Reply polish (Refine)</li>
-        <li><span class="check">✓</span> 2 versions to compare</li>
-        <li><span class="check">✓</span> Email summary (500 / month)</li>
-        <li><span class="check">✓</span> 500 translations / month · 2 languages per email</li>
-        <li><span class="check">✓</span> Quick language switch</li>
-        <li><span class="check">✓</span> Signature & saved phrases</li>
-        <li><span class="check">✓</span> Cancel anytime</li>
-      </ul>
-      <button class="btn-plan outline" onclick="openCheckout('pri_01m3ve7jkhcnr2jmfwz02yby6e')">Get Basic</button>
-    </div>
-    <div class="plan-card featured">
-      <div class="plan-badge-top">Most Popular</div>
-      <div class="plan-name">Pro</div>
-      <div class="plan-price">$25 <span>/ month</span></div>
-      <div class="plan-limit">300 replies / month</div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> 300 AI replies / month</li>
-        <li><span class="check">✓</span> All 6 email platforms</li>
-        <li><span class="check">✓</span> Everything in Basic</li>
-        <li><span class="check">✓</span> 3 versions to compare</li>
-        <li><span class="check">✓</span> Smart Reply (summary + translate)</li>
-        <li><span class="check">✓</span> Email summary (900 / month)</li>
-        <li><span class="check">✓</span> Attachment analysis (50 / month)</li>
-        <li><span class="check">✓</span> 900 translations / month · 3 languages per email</li>
-        <li><span class="check">✓</span> Cancel anytime</li>
-      </ul>
-      <button class="btn-plan filled" onclick="openCheckout('pri_01m3ves79fw6t8n5gdtxy860ks')">Get Pro</button>
-    </div>
-    <div class="plan-card">
-      <div class="plan-name">Pro+</div>
-      <div class="plan-price">$39 <span>/ month</span></div>
-      <div class="plan-limit">500 replies / month</div>
-      <ul class="plan-features">
-        <li><span class="check">✓</span> 500 AI replies / month</li>
-        <li><span class="check">✓</span> Everything in Pro</li>
-        <li><span class="check">✓</span> Attachment analysis (150 / month)</li>
-        <li><span class="check">✓</span> Document & card generation (50 / month)</li>
-        <li><span class="check">✓</span> PDF, Word & Excel export</li>
-        <li><span class="check">✓</span> Email summary (1,000 / month)</li>
-        <li><span class="check">✓</span> 1,000 translations / month · 4 languages per email</li>
-        <li><span class="check">✓</span> Cancel anytime</li>
-      </ul>
-      <a href="mailto:hello@mailmind.yongcha.app?subject=MailMind%20Pro%2B" class="btn-plan outline">Contact us</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section class="compare">
-  <p class="section-label">Comparison</p>
-  <h2 class="section-title">Why MailMind wins</h2>
-  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="compare-table">
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th class="ours">MailMind</th>
-        <th>Tool A ($27–47)</th>
-        <th>Tool B ($19)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>6 email platforms (Gmail, Outlook, iCloud, Naver, Yahoo, Yahoo Japan)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>AI Compose (write emails from scratch)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Any language combination (17 languages)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Cultural knowledge (business customs)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>3-version reply comparison</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Thread summary</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Attachment analysis (PDF, Office, images)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Document generation (PDF, Word, Excel)</td>
-        <td><span class="yes">✓</span></td>
-        <td><span class="no">✗</span></td>
-        <td><span class="no">✗</span></td>
-      </tr>
-      <tr>
-        <td>Price</td>
-        <td style="color:var(--green);font-weight:700">$15–39/mo</td>
-        <td>$27–47/mo</td>
-        <td>$19/mo</td>
-      </tr>
-    </tbody>
-  </table></div>
-</section>
+</details>
 
 <!-- FAQ -->
 <section class="faq">
