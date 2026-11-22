@@ -639,7 +639,7 @@
       <div class="how-num">2</div>
       <h3>One click: a reply in <em>their</em> language — and a copy in yours.</h3>
       <p>Proper Japanese business style — and right above it, the same reply in your language, so you know exactly what you're sending.</p>
-      <ul><li>17 languages, each country's business manners</li><li>Want options? Compare 2–3 versions, or Smart Reply</li></ul>
+      <ul><li>17 languages, each country's business manners</li><li>Want options? Compare reply versions side by side</li></ul>
     </div>
     <div class="how-shot"><div class="shot-frame shot-panel"><picture><source srcset="img/how-reply.webp" type="image/webp"><img src="img/how-reply.jpg" alt="Japanese reply with an English copy above it in the MailMind panel" loading="lazy" width="724" height="1394"></picture></div></div>
   </div>
@@ -800,7 +800,7 @@
         <td><span class="no">✗</span></td>
       </tr>
       <tr>
-        <td>3-version reply comparison</td>
+        <td>Side-by-side reply comparison</td>
         <td><span class="yes">✓</span></td>
         <td><span class="no">✗</span></td>
         <td><span class="no">✗</span></td>
@@ -856,7 +856,7 @@
     <a class="core-item" href="#features"><div class="ci-icon">🌐</div><div class="ci-name">AI Translation</div><div class="ci-desc">Read any email in your language, send the reply in theirs.</div><span class="ci-plan">All plans</span></a>
     <a class="core-item" href="#how"><div class="ci-icon">🔍</div><div class="ci-name">Document Analysis</div><div class="ci-desc">Contracts, invoices, resumes and reports — key facts in seconds.</div><span class="ci-plan pro">Pro &amp; above</span></a>
     <a class="core-item" href="#how"><div class="ci-icon">📄</div><div class="ci-name">Document Generation</div><div class="ci-desc">Quotes, contracts, proposals and reports in each country's format.</div><span class="ci-plan proplus">Pro+</span></a>
-    <a class="core-item" href="#features"><div class="ci-icon">✨</div><div class="ci-name">Smart Reply</div><div class="ci-desc">Summary first, then several reply versions to compare and pick.</div><span class="ci-plan pro">Pro &amp; above</span></a>
+    <a class="core-item" href="#features"><div class="ci-icon">🔀</div><div class="ci-name">Compare Replies</div><div class="ci-desc">Different versions of the same reply, side by side — pick the one you like.</div><span class="ci-plan pro">Paid plans</span></a>
     <a class="core-item" href="#features"><div class="ci-icon">📬</div><div class="ci-name">All your accounts</div><div class="ci-desc">Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan in one place.</div><span class="ci-plan">All plans</span></a>
   </div>
 
@@ -865,7 +865,7 @@
       <div class="phone" style="aspect-ratio:600/982">
         <picture>
           <source srcset="/img/app-detail-en-card.webp" type="image/webp">
-          <img src="/img/app-detail-en-card.jpg" width="600" height="982" alt="MailMind mobile app: an English quote request with the reply panel — AI Reply, Compare Replies, Smart Reply, translation and summary" loading="lazy" decoding="async">
+          <img src="/img/app-detail-en-card.jpg" width="600" height="982" alt="MailMind mobile app: an English quote request with the reply panel — AI Reply, Compare Replies, translation and summary" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -911,17 +911,16 @@
     <button id="plan-btn-basic" onclick="switchDemoPlan('basic')" style="padding:7px 20px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid #1a73e8;background:#fff;color:#1a73e8;font-family:inherit">Basic · $15/mo</button>
     <button id="plan-btn-pro" onclick="switchDemoPlan('pro')" style="padding:7px 20px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid #e91e8c;background:#e91e8c;color:#fff;font-family:inherit">✦ Pro · $25/mo</button>
   </div>
-  <p id="plan-desc-text" style="text-align:center;font-size:12px;color:#5f6368;margin-bottom:10px">✦ Pro: 3 versions, Smart Reply, Pre-send Check</p>
+  <p id="plan-desc-text" style="text-align:center;font-size:12px;color:#5f6368;margin-bottom:10px">✦ Pro: Compare Replies, Pre-send Check</p>
   <div id="demo-lock-msg" style="display:none;max-width:480px;margin:0 auto 12px;padding:10px;background:#fff8e1;border-radius:8px;text-align:center;font-size:12px;color:#b8860b">
-    <span id="demo-lock-text">🔒 Compare: 2 versions on Basic, 3 on Pro · Smart Reply requires Pro</span><br>
+    <span id="demo-lock-text">🔒 Compare Replies needs a paid plan</span><br>
     <a href="#pricing" style="font-size:12px;color:#e91e8c;font-weight:600;text-decoration:none">View Plans →</a>
   </div>
 
   <!-- 데모 탭 -->
   <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap">
     <button class="demo-tab-btn active" data-tab="single" onclick="switchDemoTab('single',this)">✦ AI Reply</button>
-    <button class="demo-tab-btn" data-tab="triple" onclick="switchDemoTab('triple',this)">🔀 3 Versions</button>
-    <button class="demo-tab-btn" data-tab="smart" onclick="switchDemoTab('smart',this)">🌍 Smart Reply</button>
+    <button class="demo-tab-btn" id="tab-btn-triple" data-tab="triple" onclick="switchDemoTab('triple',this)">🔀 Compare</button>
   </div>
 
   <style>
@@ -1067,7 +1066,7 @@
   </div>
   </div>
 
-  <!-- TAB 2: 3 Versions -->
+  <!-- TAB 2: Compare -->
   <div class="demo-tab" id="tab-triple">
   <div class="demo-wrap">
     <div class="demo-email-bar">
@@ -1089,63 +1088,11 @@
       <div class="ver-tab-row" id="triple-tabs">
         <button class="ver-tab active" data-idx="0" onclick="switchVer(0)">Professional 1</button>
         <button class="ver-tab" data-idx="1" onclick="switchVer(1)">Friendly 2</button>
-        <button class="ver-tab" data-idx="2" onclick="switchVer(2)">Concise 3</button>
       </div>
       <div class="demo-reply" id="triple-reply" style="display:block">
         Hi Sarah,<br><br>Thank you for checking in. I'm pleased to confirm that the project is progressing as planned and we remain on track to meet the deadline.<br><br>I will send you a detailed status report by end of day tomorrow. Please let me know if you need any specific information in the meantime.<br><br>Best regards,
       </div>
       <button class="smart-lang-btn" id="triple-lang-btn" onclick="toggleTripleLang()" style="margin-top:8px">🌐 Send in Korean</button>
-      <div class="demo-actions" style="display:flex;margin-top:8px;gap:6px">
-        <button class="demo-action demo-insert" style="flex:2" onclick="this.textContent='✅ Inserted!';setTimeout(()=>this.textContent='✉️ Insert into Gmail',1500)">✉️ Insert into Gmail</button>
-        <button class="demo-action demo-copy" style="flex:1" onclick="this.textContent='📋 Copied!';setTimeout(()=>this.textContent='📋 Copy',1500)">📋 Copy</button>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <!-- TAB 3: Smart Reply -->
-  <div class="demo-tab" id="tab-smart">
-  <div class="demo-wrap">
-    <div class="demo-email-bar">
-      <span class="demo-email-from">From: mueller@berlin-gmbh.de</span> &nbsp;·&nbsp; Vertrag Verlängerung
-    </div>
-    <div class="demo-email-body" style="font-size:13px">
-      Sehr geehrte Damen und Herren, wir möchten unseren Vertrag mit Ihnen um weitere 12 Monate verlängern. Könnten Sie uns bitte ein aktualisiertes Angebot zusenden?
-    </div>
-    <div class="demo-panel">
-      <div class="demo-panel-header">
-        <span class="demo-logo">✦ MailMind</span>
-        <div style="text-align:right">
-          <div style="font-size:11px;color:#5f6368;margin-bottom:3px">Pro · 234/300 replies left</div>
-          <div style="width:100px;height:4px;background:#f1f3f4;border-radius:2px;overflow:hidden;display:inline-block">
-            <div style="height:100%;background:#e91e8c;border-radius:2px;width:22%"></div>
-          </div>
-        </div>
-      </div>
-      <!-- 문화 감지 -->
-      <div style="margin-bottom:8px;padding:7px 10px;background:#f0f7ff;border-radius:8px;font-size:11px;color:#1a73e8;line-height:1.5">
-        🇩🇪 German business culture applied &nbsp;|&nbsp; ⚖️ Contract/Legal context detected
-      </div>
-      <!-- 버전 탭 -->
-      <div class="ver-tab-row">
-        <button class="ver-tab active" onclick="switchSmartVer(0,this)">v1</button>
-        <button class="ver-tab" onclick="switchSmartVer(1,this)">v2</button>
-        <button class="ver-tab" onclick="switchSmartVer(2,this)">v3</button>
-      </div>
-      <!-- 요약 -->
-      <div class="smart-summary" id="smart-summary">
-        📋 <strong>Summary (English):</strong><br>
-        Berlin GmbH wants to extend the contract by 12 months and is requesting an updated quote. They need a response this week.
-      </div>
-      <div class="demo-reply" id="smart-reply" style="display:block" data-korean="안녕하세요.<br><br>계약을 12개월 더 연장해 주신다니 감사합니다. 앞으로도 함께하게 되어 기쁩니다. 업데이트된 견적서는 이번 주 안에 보내 드리겠습니다.<br><br>감사합니다." data-german="Sehr geehrte Damen und Herren,<br><br>vielen Dank, dass Sie unseren Vertrag um weitere 12 Monate verlängern möchten – wir freuen uns auf die weitere Zusammenarbeit. Das aktualisierte Angebot sende ich Ihnen bis Ende dieser Woche.<br><br>Mit freundlichen Grüßen">
-        Dear Berlin GmbH team,<br><br>Thank you for extending our contract for another 12 months — we're glad to keep working together. I'll send you the updated quote by the end of this week.<br><br>Best regards,
-      </div>
-      <button class="smart-lang-btn" id="smart-lang-btn" onclick="toggleSmartLang()">🌐 Send in German</button>
-      <!-- 약속 추출 -->
-      <div style="margin-top:8px;padding:8px 10px;background:#e8f0fe;border-radius:8px;font-size:11px;color:#1a73e8;line-height:1.8">
-        <div style="font-weight:600;margin-bottom:3px">📋 Your Commitments</div>
-        <div>• Send updated quote by end of this week</div>
-      </div>
       <div class="demo-actions" style="display:flex;margin-top:8px;gap:6px">
         <button class="demo-action demo-insert" style="flex:2" onclick="this.textContent='✅ Inserted!';setTimeout(()=>this.textContent='✉️ Insert into Gmail',1500)">✉️ Insert into Gmail</button>
         <button class="demo-action demo-copy" style="flex:1" onclick="this.textContent='📋 Copied!';setTimeout(()=>this.textContent='📋 Copy',1500)">📋 Copy</button>
@@ -1173,20 +1120,20 @@
 
   // ===== UI 다국어 문자열 =====
   const UI = {
-    English:    { gen:'✦ Generate AI Reply', summary:'📝 Thread Summary', insert:'✉️ Insert into Gmail', copy:'📋 Copy', urgency:'🔴 Urgent', negotiation:'🤝 Negotiation', detected:'📌 Detected Actions', commitments:'📋 Your Commitments', guard:'🛡️ Pre-send Check', guardMsg:'⚠️ Date mismatch: Oct 15 (Sunday) — confirm before sending', toneLabel:'Reply Tone', countryLabel:"Sender's Country", langLabel:'My Language', lockBasic:'🔒 Compare needs Basic (2 versions) or Pro (3)', lockPro:'🔒 Smart Reply requires Pro' },
-    Korean:     { gen:'✦ AI 답장 생성', summary:'📝 스레드 요약', insert:'✉️ Gmail에 삽입', copy:'📋 복사', urgency:'🔴 긴급', negotiation:'🤝 협상', detected:'📌 감지된 할 일', commitments:'📋 내 약속', guard:'🛡️ 전송 전 확인', guardMsg:'⚠️ 날짜 불일치: 10월 15일(일요일) — 전송 전 확인 필요', toneLabel:'답장 톤', countryLabel:'발신자 국가', langLabel:'내 언어', lockBasic:'🔒 비교 답장은 Basic(2버전)·Pro(3버전)부터', lockPro:'🔒 스마트 답장은 Pro 필요' },
-    Japanese:   { gen:'✦ AI返信を生成', summary:'📝 スレッド要約', insert:'✉️ Gmailに挿入', copy:'📋 コピー', urgency:'🔴 緊急', negotiation:'🤝 交渉', detected:'📌 検出されたアクション', commitments:'📋 コミットメント', guard:'🛡️ 送信前確認', guardMsg:'⚠️ 日付不一致: 10月15日(日曜日) — 送信前に確認', toneLabel:'返信トーン', countryLabel:'送信者の国', langLabel:'使用言語', lockBasic:'🔒 比較返信はBasic（2案）・Pro（3案）から', lockPro:'🔒 スマート返信はPro必要' },
-    Chinese:    { gen:'✦ 生成AI回复', summary:'📝 邮件摘要', insert:'✉️ 插入Gmail', copy:'📋 复制', urgency:'🔴 紧急', negotiation:'🤝 谈判', detected:'📌 检测到的操作', commitments:'📋 我的承诺', guard:'🛡️ 发送前检查', guardMsg:'⚠️ 日期不匹配：10月15日（周日）— 发送前确认', toneLabel:'回复语气', countryLabel:'发件人国家', langLabel:'我的语言', lockBasic:'🔒 比较回复需要Basic（2个）或Pro（3个）', lockPro:'🔒 智能回复需要Pro' },
-    Spanish:    { gen:'✦ Generar respuesta IA', summary:'📝 Resumen del hilo', insert:'✉️ Insertar en Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociación', detected:'📌 Acciones detectadas', commitments:'📋 Mis compromisos', guard:'🛡️ Verificación previa', guardMsg:'⚠️ Fecha incorrecta: 15 oct (domingo) — confirmar antes de enviar', toneLabel:'Tono de respuesta', countryLabel:'País del remitente', langLabel:'Mi idioma', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply requiere Pro' },
-    French:     { gen:'✦ Générer une réponse IA', summary:'📝 Résumé du fil', insert:'✉️ Insérer dans Gmail', copy:'📋 Copier', urgency:'🔴 Urgent', negotiation:'🤝 Négociation', detected:'📌 Actions détectées', commitments:'📋 Mes engagements', guard:'🛡️ Vérification avant envoi', guardMsg:'⚠️ Date incorrecte : 15 oct (dimanche) — vérifier avant envoi', toneLabel:'Ton de réponse', countryLabel:'Pays expéditeur', langLabel:'Ma langue', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply nécessite Pro' },
-    German:     { gen:'✦ KI-Antwort generieren', summary:'📝 Thread-Zusammenfassung', insert:'✉️ In Gmail einfügen', copy:'📋 Kopieren', urgency:'🔴 Dringend', negotiation:'🤝 Verhandlung', detected:'📌 Erkannte Aktionen', commitments:'📋 Meine Zusagen', guard:'🛡️ Vor dem Senden prüfen', guardMsg:'⚠️ Datumsfehler: 15. Okt. (Sonntag) — bestätigen', toneLabel:'Antwortton', countryLabel:'Land des Absenders', langLabel:'Meine Sprache', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply erfordert Pro' },
-    Portuguese: { gen:'✦ Gerar resposta IA', summary:'📝 Resumo do tópico', insert:'✉️ Inserir no Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociação', detected:'📌 Ações detectadas', commitments:'📋 Meus compromissos', guard:'🛡️ Verificação antes de enviar', guardMsg:'⚠️ Data incorreta: 15 out (domingo) — confirmar', toneLabel:'Tom de resposta', countryLabel:'País do remetente', langLabel:'Meu idioma', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply requer Pro' },
-    Arabic:     { gen:'✦ إنشاء رد AI', summary:'📝 ملخص المحادثة', insert:'✉️ إدراج في Gmail', copy:'📋 نسخ', urgency:'🔴 عاجل', negotiation:'🤝 تفاوض', detected:'📌 الإجراءات', commitments:'📋 التزاماتي', guard:'🛡️ فحص قبل الإرسال', guardMsg:'⚠️ تناقض في التاريخ: 15 أكتوبر (أحد) — تحقق', toneLabel:'نبرة الرد', countryLabel:'بلد المرسل', langLabel:'لغتي', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 الرد الذكي يتطلب Pro' },
-    Turkish:    { gen:"✦ AI yanıtı oluştur", summary:'📝 Konu özeti', insert:"✉️ Gmail'e ekle", copy:'📋 Kopyala', urgency:'🔴 Acil', negotiation:'🤝 Müzakere', detected:'📌 Tespit edilen eylemler', commitments:'📋 Taahhütlerim', guard:'🛡️ Göndermeden önce kontrol', guardMsg:'⚠️ Tarih uyuşmazlığı: 15 Ekim (Pazar) — onaylayın', toneLabel:'Yanıt tonu', countryLabel:'Gönderenin ülkesi', langLabel:'Dilim', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Akıllı Yanıt Pro gerektirir' },
-    Italian:    { gen:'✦ Genera risposta IA', summary:'📝 Riepilogo thread', insert:'✉️ Inserisci in Gmail', copy:'📋 Copia', urgency:'🔴 Urgente', negotiation:'🤝 Trattativa', detected:'📌 Azioni rilevate', commitments:'📋 I miei impegni', guard:'🛡️ Controllo pre-invio', guardMsg:'⚠️ Data errata: 15 ott (domenica) — confermare', toneLabel:'Tono risposta', countryLabel:'Paese mittente', langLabel:'La mia lingua', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply richiede Pro' },
-    Vietnamese: { gen:'✦ Tạo trả lời AI', summary:'📝 Tóm tắt chuỗi', insert:'✉️ Chèn vào Gmail', copy:'📋 Sao chép', urgency:'🔴 Khẩn cấp', negotiation:'🤝 Đàm phán', detected:'📌 Hành động phát hiện', commitments:'📋 Cam kết của tôi', guard:'🛡️ Kiểm tra trước khi gửi', guardMsg:'⚠️ Ngày không khớp: 15 tháng 10 (Chủ nhật) — xác nhận', toneLabel:'Giọng điệu', countryLabel:'Quốc gia người gửi', langLabel:'Ngôn ngữ của tôi', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply yêu cầu Pro' },
-    Thai:       { gen:'✦ สร้างการตอบกลับ AI', summary:'📝 สรุปเธรด', insert:'✉️ แทรกใน Gmail', copy:'📋 คัดลอก', urgency:'🔴 เร่งด่วน', negotiation:'🤝 การเจรจา', detected:'📌 การดำเนินการ', commitments:'📋 ข้อผูกมัด', guard:'🛡️ ตรวจสอบก่อนส่ง', guardMsg:'⚠️ วันที่ไม่ตรงกัน: 15 ต.ค. (วันอาทิตย์) — ยืนยัน', toneLabel:'โทน', countryLabel:'ประเทศผู้ส่ง', langLabel:'ภาษาของฉัน', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply ต้องการ Pro' },
-    Indonesian: { gen:'✦ Buat balasan AI', summary:'📝 Ringkasan utas', insert:'✉️ Masukkan ke Gmail', copy:'📋 Salin', urgency:'🔴 Mendesak', negotiation:'🤝 Negosiasi', detected:'📌 Tindakan terdeteksi', commitments:'📋 Komitmen saya', guard:'🛡️ Periksa sebelum kirim', guardMsg:'⚠️ Tanggal tidak cocok: 15 Okt (Minggu) — konfirmasi', toneLabel:'Nada balasan', countryLabel:'Negara pengirim', langLabel:'Bahasa saya', lockBasic:'🔒 Compare: Basic 2 versions · Pro 3', lockPro:'🔒 Smart Reply memerlukan Pro' },
+    English:    { gen:'✦ Generate AI Reply', summary:'📝 Thread Summary', insert:'✉️ Insert into Gmail', copy:'📋 Copy', urgency:'🔴 Urgent', negotiation:'🤝 Negotiation', detected:'📌 Detected Actions', commitments:'📋 Your Commitments', guard:'🛡️ Pre-send Check', guardMsg:'⚠️ Date mismatch: Oct 15 (Sunday) — confirm before sending', toneLabel:'Reply Tone', countryLabel:"Sender's Country", langLabel:'My Language', lockBasic:'🔒 Compare Replies needs a paid plan' },
+    Korean:     { gen:'✦ AI 답장 생성', summary:'📝 스레드 요약', insert:'✉️ Gmail에 삽입', copy:'📋 복사', urgency:'🔴 긴급', negotiation:'🤝 협상', detected:'📌 감지된 할 일', commitments:'📋 내 약속', guard:'🛡️ 전송 전 확인', guardMsg:'⚠️ 날짜 불일치: 10월 15일(일요일) — 전송 전 확인 필요', toneLabel:'답장 톤', countryLabel:'발신자 국가', langLabel:'내 언어', lockBasic:'🔒 비교 답장은 유료 플랜부터' },
+    Japanese:   { gen:'✦ AI返信を生成', summary:'📝 スレッド要約', insert:'✉️ Gmailに挿入', copy:'📋 コピー', urgency:'🔴 緊急', negotiation:'🤝 交渉', detected:'📌 検出されたアクション', commitments:'📋 コミットメント', guard:'🛡️ 送信前確認', guardMsg:'⚠️ 日付不一致: 10月15日(日曜日) — 送信前に確認', toneLabel:'返信トーン', countryLabel:'送信者の国', langLabel:'使用言語', lockBasic:'🔒 比較返信は有料プランから' },
+    Chinese:    { gen:'✦ 生成AI回复', summary:'📝 邮件摘要', insert:'✉️ 插入Gmail', copy:'📋 复制', urgency:'🔴 紧急', negotiation:'🤝 谈判', detected:'📌 检测到的操作', commitments:'📋 我的承诺', guard:'🛡️ 发送前检查', guardMsg:'⚠️ 日期不匹配：10月15日（周日）— 发送前确认', toneLabel:'回复语气', countryLabel:'发件人国家', langLabel:'我的语言', lockBasic:'🔒 比较回复需要付费方案' },
+    Spanish:    { gen:'✦ Generar respuesta IA', summary:'📝 Resumen del hilo', insert:'✉️ Insertar en Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociación', detected:'📌 Acciones detectadas', commitments:'📋 Mis compromisos', guard:'🛡️ Verificación previa', guardMsg:'⚠️ Fecha incorrecta: 15 oct (domingo) — confirmar antes de enviar', toneLabel:'Tono de respuesta', countryLabel:'País del remitente', langLabel:'Mi idioma', lockBasic:'🔒 Comparar respuestas requiere un plan de pago' },
+    French:     { gen:'✦ Générer une réponse IA', summary:'📝 Résumé du fil', insert:'✉️ Insérer dans Gmail', copy:'📋 Copier', urgency:'🔴 Urgent', negotiation:'🤝 Négociation', detected:'📌 Actions détectées', commitments:'📋 Mes engagements', guard:'🛡️ Vérification avant envoi', guardMsg:'⚠️ Date incorrecte : 15 oct (dimanche) — vérifier avant envoi', toneLabel:'Ton de réponse', countryLabel:'Pays expéditeur', langLabel:'Ma langue', lockBasic:'🔒 Comparer les réponses nécessite un forfait payant' },
+    German:     { gen:'✦ KI-Antwort generieren', summary:'📝 Thread-Zusammenfassung', insert:'✉️ In Gmail einfügen', copy:'📋 Kopieren', urgency:'🔴 Dringend', negotiation:'🤝 Verhandlung', detected:'📌 Erkannte Aktionen', commitments:'📋 Meine Zusagen', guard:'🛡️ Vor dem Senden prüfen', guardMsg:'⚠️ Datumsfehler: 15. Okt. (Sonntag) — bestätigen', toneLabel:'Antwortton', countryLabel:'Land des Absenders', langLabel:'Meine Sprache', lockBasic:'🔒 Antworten vergleichen erfordert einen kostenpflichtigen Tarif' },
+    Portuguese: { gen:'✦ Gerar resposta IA', summary:'📝 Resumo do tópico', insert:'✉️ Inserir no Gmail', copy:'📋 Copiar', urgency:'🔴 Urgente', negotiation:'🤝 Negociação', detected:'📌 Ações detectadas', commitments:'📋 Meus compromissos', guard:'🛡️ Verificação antes de enviar', guardMsg:'⚠️ Data incorreta: 15 out (domingo) — confirmar', toneLabel:'Tom de resposta', countryLabel:'País do remetente', langLabel:'Meu idioma', lockBasic:'🔒 Comparar respostas requer um plano pago' },
+    Arabic:     { gen:'✦ إنشاء رد AI', summary:'📝 ملخص المحادثة', insert:'✉️ إدراج في Gmail', copy:'📋 نسخ', urgency:'🔴 عاجل', negotiation:'🤝 تفاوض', detected:'📌 الإجراءات', commitments:'📋 التزاماتي', guard:'🛡️ فحص قبل الإرسال', guardMsg:'⚠️ تناقض في التاريخ: 15 أكتوبر (أحد) — تحقق', toneLabel:'نبرة الرد', countryLabel:'بلد المرسل', langLabel:'لغتي', lockBasic:'🔒 مقارنة الردود تتطلب خطة مدفوعة' },
+    Turkish:    { gen:"✦ AI yanıtı oluştur", summary:'📝 Konu özeti', insert:"✉️ Gmail'e ekle", copy:'📋 Kopyala', urgency:'🔴 Acil', negotiation:'🤝 Müzakere', detected:'📌 Tespit edilen eylemler', commitments:'📋 Taahhütlerim', guard:'🛡️ Göndermeden önce kontrol', guardMsg:'⚠️ Tarih uyuşmazlığı: 15 Ekim (Pazar) — onaylayın', toneLabel:'Yanıt tonu', countryLabel:'Gönderenin ülkesi', langLabel:'Dilim', lockBasic:'🔒 Yanıtları karşılaştırma ücretli plan gerektirir' },
+    Italian:    { gen:'✦ Genera risposta IA', summary:'📝 Riepilogo thread', insert:'✉️ Inserisci in Gmail', copy:'📋 Copia', urgency:'🔴 Urgente', negotiation:'🤝 Trattativa', detected:'📌 Azioni rilevate', commitments:'📋 I miei impegni', guard:'🛡️ Controllo pre-invio', guardMsg:'⚠️ Data errata: 15 ott (domenica) — confermare', toneLabel:'Tono risposta', countryLabel:'Paese mittente', langLabel:'La mia lingua', lockBasic:'🔒 Confronta risposte richiede un piano a pagamento' },
+    Vietnamese: { gen:'✦ Tạo trả lời AI', summary:'📝 Tóm tắt chuỗi', insert:'✉️ Chèn vào Gmail', copy:'📋 Sao chép', urgency:'🔴 Khẩn cấp', negotiation:'🤝 Đàm phán', detected:'📌 Hành động phát hiện', commitments:'📋 Cam kết của tôi', guard:'🛡️ Kiểm tra trước khi gửi', guardMsg:'⚠️ Ngày không khớp: 15 tháng 10 (Chủ nhật) — xác nhận', toneLabel:'Giọng điệu', countryLabel:'Quốc gia người gửi', langLabel:'Ngôn ngữ của tôi', lockBasic:'🔒 So sánh câu trả lời cần gói trả phí' },
+    Thai:       { gen:'✦ สร้างการตอบกลับ AI', summary:'📝 สรุปเธรด', insert:'✉️ แทรกใน Gmail', copy:'📋 คัดลอก', urgency:'🔴 เร่งด่วน', negotiation:'🤝 การเจรจา', detected:'📌 การดำเนินการ', commitments:'📋 ข้อผูกมัด', guard:'🛡️ ตรวจสอบก่อนส่ง', guardMsg:'⚠️ วันที่ไม่ตรงกัน: 15 ต.ค. (วันอาทิตย์) — ยืนยัน', toneLabel:'โทน', countryLabel:'ประเทศผู้ส่ง', langLabel:'ภาษาของฉัน', lockBasic:'🔒 การเปรียบเทียบคำตอบต้องใช้แพ็กเกจแบบชำระเงิน' },
+    Indonesian: { gen:'✦ Buat balasan AI', summary:'📝 Ringkasan utas', insert:'✉️ Masukkan ke Gmail', copy:'📋 Salin', urgency:'🔴 Mendesak', negotiation:'🤝 Negosiasi', detected:'📌 Tindakan terdeteksi', commitments:'📋 Komitmen saya', guard:'🛡️ Periksa sebelum kirim', guardMsg:'⚠️ Tanggal tidak cocok: 15 Okt (Minggu) — konfirmasi', toneLabel:'Nada balasan', countryLabel:'Negara pengirim', langLabel:'Bahasa saya', lockBasic:'🔒 Bandingkan balasan memerlukan paket berbayar' },
   };
 
   // ===== 답장 데이터 =====
@@ -1430,7 +1377,7 @@
     const copyBtn = document.querySelector('.demo-action.demo-copy');
     if (copyBtn) copyBtn.textContent = ui.copy;
     const lockText = document.getElementById('demo-lock-text');
-    if (lockText) lockText.textContent = demoPlan === 'free' ? ui.lockBasic : ui.lockPro;
+    if (lockText) lockText.textContent = ui.lockBasic;
     const guardDiv = document.getElementById('demo-guard');
     if (guardDiv) guardDiv.innerHTML = `<strong>${ui.guard}</strong><br>${ui.guardMsg}`;
     const labels = document.querySelectorAll('#tab-single .demo-panel div[style*="font-size:10px"]');
@@ -1596,7 +1543,6 @@
     const desc  = document.getElementById('plan-desc-text');
     const lock  = document.getElementById('demo-lock-msg');
     const tripleBtn = document.getElementById('tab-btn-triple');
-    const smartBtn  = document.getElementById('tab-btn-smart');
 
     if (plan === 'free') {
       if (badge) badge.textContent = 'Starter · 28/35 replies left';
@@ -1604,7 +1550,6 @@
       if (desc)  desc.textContent = '🆓 Starter: Basic AI reply only';
       if (lock)  lock.style.display = 'block';
       if (tripleBtn) { tripleBtn.style.opacity='0.4'; tripleBtn.style.pointerEvents='none'; }
-      if (smartBtn)  { smartBtn.style.opacity='0.4';  smartBtn.style.pointerEvents='none'; }
       // Free면 single 탭으로
       document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));
       document.querySelectorAll('.demo-tab-btn').forEach(b=>b.classList.remove('active'));
@@ -1614,32 +1559,22 @@
       if (badge) badge.textContent = 'Basic · 87/200 replies left';
       if (bar)   { bar.style.width='44%'; bar.style.background='#1a73e8'; }
       if (desc)  desc.textContent = '⚡ Basic: AI reply + 2 versions to compare';
-      if (lock)  lock.style.display = 'block';
+      if (lock)  lock.style.display = 'none';
       if (tripleBtn) { tripleBtn.style.opacity='1'; tripleBtn.style.pointerEvents='auto'; }
-      if (smartBtn)  { smartBtn.style.opacity='0.4'; smartBtn.style.pointerEvents='none'; }
-      // Smart Reply 탭에 있으면 single로
-      if (document.getElementById('tab-smart').classList.contains('active')) {
-        document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));
-        document.querySelectorAll('.demo-tab-btn').forEach(b=>b.classList.remove('active'));
-        document.getElementById('tab-single').classList.add('active');
-        document.querySelector('[data-tab="single"]').classList.add('active');
-      }
     } else {
       if (badge) badge.textContent = 'Pro · 13/300 replies left';
       if (bar)   { bar.style.width='4%'; bar.style.background='#e91e8c'; }
-      if (desc)  desc.textContent = '✦ Pro: 3 versions, Smart Reply, Pre-send Check';
+      if (desc)  desc.textContent = '✦ Pro: Compare Replies, Pre-send Check';
       if (lock)  lock.style.display = 'none';
       if (tripleBtn) { tripleBtn.style.opacity='1'; tripleBtn.style.pointerEvents='auto'; }
-      if (smartBtn)  { smartBtn.style.opacity='1';  smartBtn.style.pointerEvents='auto'; }
     }
     updateUI(demoCurrentLang);
   }
 
-  // ===== TAB 2: 3 Versions =====
+  // ===== TAB 2: Compare =====
   const TRIPLE_REPLIES = [
     `Hi Sarah,<br><br>Thank you for checking in. I'm pleased to confirm the project is on track to meet the deadline.<br><br>I will send a detailed status report by EOD tomorrow.<br><br>Best regards,`,
-    `Hi Sarah,<br><br>Thanks for the follow-up! Everything is moving well — no blockers, on schedule.<br><br>Full update by tomorrow. Anything specific you'd like me to focus on?<br><br>Best,`,
-    `Hi Sarah,<br><br>On track, no blockers. Report by EOD tomorrow.<br><br>Best regards,`
+    `Hi Sarah,<br><br>Thanks for the follow-up! Everything is moving well — no blockers, on schedule.<br><br>Full update by tomorrow. Anything specific you'd like me to focus on?<br><br>Best,`
   ];
   let tripleCurrentVer = 0;
   let tripleIsKR = false;
@@ -1657,8 +1592,7 @@
     tripleIsKR = !tripleIsKR;
     if (tripleIsKR) {
       const KR = ['안녕하세요 Sarah님,<br><br>프로젝트는 마감일에 맞춰 순조롭게 진행 중입니다.<br><br>내일 EOD까지 상세 보고서를 보내드리겠습니다.<br><br>감사합니다,',
-                  '안녕하세요 Sarah님,<br><br>순조롭게 진행 중이며 블로커 없습니다. 내일까지 전체 업데이트 드릴게요.<br><br>감사합니다,',
-                  '안녕하세요 Sarah님,<br><br>순조롭습니다. 내일 EOD 보고서 드릴게요.<br><br>감사합니다,'];
+                  '안녕하세요 Sarah님,<br><br>순조롭게 진행 중이며 블로커 없습니다. 내일까지 전체 업데이트 드릴게요.<br><br>감사합니다,'];
       el.innerHTML = KR[tripleCurrentVer];
       btn.textContent = '🔄 Back to English';
       btn.style.background = '#e91e8c'; btn.style.color = '#fff'; btn.style.borderColor = '#e91e8c';
@@ -1669,46 +1603,6 @@
     }
   }
 
-  // ===== TAB 3: Smart Reply =====
-  const SMART_V = [
-    '안녕하세요.<br><br>계약을 12개월 더 연장해 주신다니 감사합니다. 앞으로도 함께하게 되어 기쁩니다. 업데이트된 견적서는 이번 주 안에 보내 드리겠습니다.<br><br>감사합니다.',
-    '안녕하세요.<br><br>계약 연장 결정해 주셔서 감사합니다. 최신 견적서는 금주 중에 전달드리겠습니다.<br><br>감사합니다.',
-    '네, 견적서는 이번 주 안에 보내 드리겠습니다.<br><br>감사합니다.'
-  ];
-  const SMART_DE = [
-    'Sehr geehrte Damen und Herren,<br><br>vielen Dank, dass Sie unseren Vertrag um weitere 12 Monate verlängern möchten – wir freuen uns auf die weitere Zusammenarbeit. Das aktualisierte Angebot sende ich Ihnen bis Ende dieser Woche.<br><br>Mit freundlichen Grüßen',
-    'Sehr geehrte Damen und Herren,<br><br>herzlichen Dank für die Verlängerung. Das überarbeitete Angebot folgt diese Woche.<br><br>Mit freundlichen Grüßen',
-    'Das Angebot erhalten Sie bis Ende der Woche.<br><br>Mit freundlichen Grüßen'
-  ];
-  let smartCurrentVer = 0;
-  let smartIsDE = false;
-
-  function switchSmartVer(idx, btn) {
-    smartCurrentVer = idx;
-    document.querySelectorAll('#tab-smart .ver-tab').forEach(t => t.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-    const el = document.getElementById('smart-reply');
-    el.style.opacity = '0';
-    setTimeout(() => {
-      el.innerHTML = smartIsDE ? SMART_DE[idx] : SMART_V[idx];
-      el.style.opacity = '1'; el.style.transition = 'opacity 0.3s';
-    }, 150);
-  }
-
-  function toggleSmartLang() {
-    const btn = document.getElementById('smart-lang-btn');
-    const el  = document.getElementById('smart-reply');
-    smartIsDE = !smartIsDE;
-    el.style.opacity = '0';
-    setTimeout(() => {
-      el.innerHTML = smartIsDE ? SMART_DE[smartCurrentVer] : SMART_V[smartCurrentVer];
-      btn.textContent = smartIsDE ? '🔄 Back to Korean' : '🌐 Send in German';
-      btn.style.background   = smartIsDE ? '#1a73e8' : '#fff';
-      btn.style.color        = smartIsDE ? '#fff'    : '#34a853';
-      btn.style.borderColor  = smartIsDE ? '#1a73e8' : '#34a853';
-      el.style.opacity = '1'; el.style.transition = 'opacity 0.3s';
-    }, 150);
-  }
   </script>
 </section>
 
@@ -1733,11 +1627,11 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">What if I don't speak the language at all? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">That's exactly what MailMind is for. The Smart Reply feature reads the email, shows you a summary in your language, then writes a perfect reply in the sender's language. You never need to understand the original email.</div>
+      <div class="faq-a">That's exactly what MailMind is for. Tap <b>Email Summary</b> to read what was asked in your language. When you generate a reply, MailMind writes it in the sender's language and shows the same reply in your language, so you know exactly what you're sending.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How does document analysis work? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Open an email with an attachment and tap <b>AI Analysis</b>. MailMind reads PDF, Word, Excel/CSV, PowerPoint, image, HWP and OpenDocument files and shows the key facts — amounts, dates, deadlines and obligations — in your language, then uses them when you generate the reply. Analysis runs only when you tap it, never automatically. Scanned PDFs and photos are read as well; check any number marked as uncertain. In the mobile app, the files inside a ZIP attachment are read in the same analysis. Password-protected files can't be opened. Available on Pro (50 / month) and Pro+ (150 / month).</div>
+      <div class="faq-a">Open an email with an attachment and tap <b>Analysis Reply</b>. MailMind reads PDF, Word, Excel/CSV, PowerPoint, image, HWP and OpenDocument files and shows the key facts — amounts, dates, deadlines and obligations — in your language, then writes the reply from them. Analysis runs only when you tap it, never automatically. Scanned PDFs and photos are read as well; check any number marked as uncertain. In the mobile app, the files inside a ZIP attachment are read in the same analysis. Password-protected files can't be opened. Available on Pro (50 / month) and Pro+ (150 / month).</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What documents can MailMind create? <span class="faq-arrow">+</span></div>
@@ -1748,8 +1642,8 @@
       <div class="faq-a">They are AI drafts, not legal advice. MailMind uses each country's common layout and wording and only fills in details that appear in the email, but you should review every document — and have contracts checked by a professional — before signing or sending. Official tax invoices that must be issued through a government system (for example Brazil NF-e or Mexico CFDI) are marked as drafts.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What's the difference between Smart Reply and Compare Replies? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Compare Replies writes 2 versions (Basic) or 3 versions (Pro and above) in different styles so you can pick one. Smart Reply (Pro and above) also gives you a summary of the email in your language first, so you can check what was asked before choosing a reply in the sender's language.</div>
+      <div class="faq-q">What is Compare Replies? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Compare Replies writes different versions of the same reply side by side, so you can pick the one that fits and edit it before sending. It is available on paid plans; see <a href="#pricing">Pricing</a> for details.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What AI model does it use? <span class="faq-arrow">+</span></div>
