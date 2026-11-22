@@ -175,6 +175,7 @@
       .phone img, .phone picture { border-radius: 28px; }
       .hero-chip.c1 { right: 4%; }
     }
+    @media (max-width: 480px) { .compare-table th, .compare-table td { padding-left: 8px; padding-right: 8px; font-size: 13px; } }
     @media (max-width: 420px) {
       .hero-visual { height: 400px; }
       .phone { width: 170px; border-radius: 30px; padding: 7px; }
@@ -343,6 +344,36 @@
     .feature-icon { font-size: 28px; margin-bottom: 12px; }
     .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
     .feature-card p { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+
+
+    /* HOW IT WORKS */
+    .how { background: radial-gradient(1200px 600px at 85% -10%, rgba(233,30,140,.35), transparent 60%), radial-gradient(900px 500px at -10% 40%, rgba(128,86,255,.35), transparent 60%), #14122b; color: #fff; padding: 88px 20px 96px; overflow: hidden; }
+    .how-inner { max-width: 1120px; margin: 0 auto; }
+    .how .section-label { color: #ff8cc8; }
+    .how .section-title { color: #fff; }
+    .how-lead { text-align: center; color: #c9c6e8; font-size: 17px; max-width: 640px; margin: -8px auto 56px; line-height: 1.6; }
+    .how-step { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; margin-bottom: 72px; }
+    .how-step:last-child { margin-bottom: 0; }
+    @media (min-width: 900px) { .how-step { grid-template-columns: 5fr 7fr; gap: 56px; } .how-step.flip .how-text { order: 2; } .how-step.tall { grid-template-columns: 6fr 5fr; } .how-step.flip:not(.tall) { grid-template-columns: 7fr 5fr; } }
+    .how-num { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #E91E8C, #8056FF); font-weight: 800; font-size: 20px; box-shadow: 0 10px 30px rgba(233,30,140,.45); margin-bottom: 16px; }
+    .how-text h3 { font-size: 27px; line-height: 1.25; margin: 0 0 12px; letter-spacing: -.01em; }
+    .how-text p { color: #c9c6e8; font-size: 16px; line-height: 1.65; margin: 0 0 14px; }
+    .how-text ul { list-style: none; padding: 0; margin: 0; }
+    .how-text li { color: #e6e3ff; font-size: 15px; line-height: 1.5; padding: 6px 0 6px 26px; position: relative; }
+    .how-text li::before { content: "✦"; position: absolute; left: 0; color: #ff8cc8; }
+    .how-tag { display: inline-block; font-size: 12px; font-weight: 700; color: #14122b; background: #ffd166; border-radius: 999px; padding: 4px 10px; margin-top: 8px; }
+    .how-shot { position: relative; }
+    .how-shot::before { content: ""; position: absolute; inset: 8% 6%; background: linear-gradient(135deg, #E91E8C, #8056FF); filter: blur(60px); opacity: .45; z-index: 0; }
+    .shot-frame { position: relative; z-index: 1; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.15); }
+    .shot-frame .bar { height: 30px; background: #eef0f6; display: flex; align-items: center; gap: 6px; padding: 0 12px; }
+    .shot-frame .bar i { width: 10px; height: 10px; border-radius: 50%; background: #d4d7e2; display: block; }
+    .shot-frame img { display: block; width: 100%; height: auto; }
+    .shot-panel { max-width: 380px; margin: 0 auto; }
+    .shot-docs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+    .shot-docs .shot-frame:nth-child(2) { margin-top: 48px; }
+    .shot-docs figcaption, .how-cap { text-align: center; font-size: 12px; color: #a9a5d0; margin-top: 10px; position: relative; z-index: 1; }
+    @media (max-width: 600px) { .shot-docs { grid-template-columns: 1fr; } .shot-docs .shot-frame:nth-child(2), .shot-docs figure:nth-child(2) { margin-top: 0; } .how { padding: 64px 16px 72px; } .how-text h3 { font-size: 24px; } }
+    .how-note { text-align: center; color: #8f8bb8; font-size: 13px; margin-top: 56px; }
 
     /* PRICING */
     .pricing {
@@ -537,6 +568,7 @@
 <nav>
   <div class="nav-logo">✦ MailMind</div>
   <div class="nav-links">
+    <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#documents">Documents</a>
     <a href="#pricing">Pricing</a>
@@ -613,6 +645,71 @@
       <div class="solution">✓ One click, done</div>
     </div>
   </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+ <div class="how-inner">
+  <div class="section-label" style="text-align:center">How it works</div>
+  <h2 class="section-title" style="text-align:center">From “I can't read this” to <span style="color:#ff8cc8">sent</span> — in four clicks</h2>
+  <p class="how-lead">Real screens from the MailMind Chrome extension. Here, a buyer in Japan asks for a quote — and you don't speak Japanese.</p>
+
+  <div class="how-step">
+    <div class="how-text">
+      <div class="how-num">1</div>
+      <h3>Open the email. MailMind is already there.</h3>
+      <p>The panel sits next to the email you have open — no copy-paste, no new tab.</p>
+      <ul><li>Gmail, Outlook, Naver, iCloud, Yahoo and Yahoo Japan</li><li>Detects the sender's language and country on its own</li><li>Reads only the email you open, only when you click</li></ul>
+    </div>
+    <div class="how-shot"><div class="shot-frame"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width: 600px)" srcset="img/how-open-m.webp" type="image/webp"><source media="(max-width: 600px)" srcset="img/how-open-m.jpg"><source srcset="img/how-open.webp" type="image/webp"><img src="img/how-open.jpg" alt="MailMind panel next to an open email in a browser mail inbox" loading="lazy" width="1400" height="520"></picture></div></div>
+  </div>
+
+  <div class="how-step flip tall">
+    <div class="how-text">
+      <div class="how-num">2</div>
+      <h3>One click: a reply in <em>their</em> language — and a copy in yours.</h3>
+      <p>MailMind writes the reply in proper Japanese business style. Right above it, you read the same reply in your own language, so you know exactly what you're sending.</p>
+      <ul><li>17 languages, with each country's business manners</li><li>Your-language copy is included — it doesn't use your translations</li><li>Want options? Compare 2–3 versions, or Smart Reply with a summary first</li></ul>
+    </div>
+    <div class="how-shot"><div class="shot-frame shot-panel"><picture><source srcset="img/how-reply.webp" type="image/webp"><img src="img/how-reply.jpg" alt="Japanese reply with an English copy above it in the MailMind panel" loading="lazy" width="724" height="1394"></picture></div></div>
+  </div>
+
+  <div class="how-step">
+    <div class="how-text">
+      <div class="how-num">3</div>
+      <h3>Attachment? Analyze it before you answer.</h3>
+      <p>Tap <b>Analysis</b> and MailMind reads the PDF, spreadsheet or scan, shows the key facts in your language — and flags what's missing — then writes the reply from them.</p>
+      <ul><li>PDF, Word, Excel/CSV, images and scanned papers</li><li>Totals and per-group values calculated from the actual rows</li></ul>
+      <span class="how-tag">Pro &amp; Pro+</span>
+    </div>
+    <div class="how-shot"><div class="shot-frame shot-panel"><picture><source srcset="img/how-analysis.webp" type="image/webp"><img src="img/how-analysis.jpg" alt="Attachment analysis card with key facts and missing information" loading="lazy" width="724" height="740"></picture></div></div>
+  </div>
+
+  <div class="how-step flip">
+    <div class="how-text">
+      <div class="how-num">4</div>
+      <h3>Insert, check, send.</h3>
+      <p>The reply drops into the mail's own reply box with its paragraphs intact. Edit anything you like — <b>you</b> press Send. MailMind never sends on its own.</p>
+    </div>
+    <div class="how-shot"><div class="shot-frame"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width: 600px)" srcset="img/how-insert-m.webp" type="image/webp"><source media="(max-width: 600px)" srcset="img/how-insert-m.jpg"><source srcset="img/how-insert.webp" type="image/webp"><img src="img/how-insert.jpg" alt="The Japanese reply inserted into the reply box" loading="lazy" width="1400" height="340"></picture></div></div>
+  </div>
+
+  <div class="how-step tall">
+    <div class="how-text">
+      <div class="how-num">✦</div>
+      <h3>Need the quote too? Make it in their country's format.</h3>
+      <p>From the same email, the <b>Document</b> tab builds a real quote, invoice, contract or letter — the layout the other side is used to, in their language, with totals calculated. Attach it to your reply with a cover note already written.</p>
+      <ul><li>1,400+ document types across 26 countries</li><li>PDF, Word and Excel (with live formulas)</li></ul>
+      <span class="how-tag">Pro+</span>
+    </div>
+    <div class="how-shot"><div class="shot-docs">
+      <figure style="margin:0"><div class="shot-frame"><picture><source srcset="img/doc-quote-jp.webp" type="image/webp"><img src="img/doc-quote-jp.jpg" alt="Japanese quotation (見積書) generated by MailMind" loading="lazy" width="828" height="900"></picture></div><figcaption>見積書 for a buyer in Japan</figcaption></figure>
+      <figure style="margin:0"><div class="shot-frame"><picture><source srcset="img/doc-invoice-de.webp" type="image/webp"><img src="img/doc-invoice-de.jpg" alt="English invoice for a buyer in Germany generated by MailMind" loading="lazy" width="828" height="560"></picture></div><figcaption>Invoice for a buyer in Germany</figcaption></figure>
+    </div></div>
+  </div>
+
+  <p class="how-note">Sample emails and company details. Screens show the Chrome extension; the Android and iPhone apps are coming soon.</p>
+ </div>
 </section>
 
 <!-- DEMO -->
@@ -1790,7 +1887,7 @@
 <section class="compare">
   <p class="section-label">Comparison</p>
   <h2 class="section-title">Why MailMind wins</h2>
-  <table class="compare-table">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="compare-table">
     <thead>
       <tr>
         <th>Feature</th>
@@ -1855,7 +1952,7 @@
         <td>$19/mo</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 </section>
 
 <!-- FAQ -->
