@@ -30,10 +30,11 @@
 <nav><a href="https://mailmind.yongcha.app" class="logo">✦ MailMind AI</a></nav>
 <div class="container">
   <h1>Privacy Policy</h1>
-  <p class="date">Last updated: November 12, 2026</p>
-  <p>MailMind AI is an AI email assistant available as a mobile app (Android and iOS) and a Chrome extension. It helps you write, translate and summarize email replies. This policy explains what data we access, where it goes, how long we keep it, and your choices.</p>
+  <p class="date">Last updated: November 17, 2026</p>
+  <p>MailMind AI is provided by MBTI Ltd. It is an AI email assistant available as a mobile app (Android and iOS) and a Chrome extension. It helps you write, translate and summarize email replies. This policy explains what data we access, where it goes, how long we keep it, and your choices.</p>
 
-  <h2>1. Mail accounts you can connect</h2>
+  <h2>1. How you sign in and which mail accounts you can connect</h2>
+  <p>You can sign in to MailMind with Google, with Apple (iOS app), or with your email address and a one-time code we send to it. Signing in only identifies your MailMind account; connecting a mailbox is a separate step.</p>
   <ul>
     <li>Gmail (Google sign-in) and Outlook (Microsoft sign-in)</li>
     <li>iCloud Mail, Yahoo Mail, Yahoo Japan Mail and Naver Mail, using an app password you create with that provider</li>
@@ -45,8 +46,9 @@
     <li><strong>Email content</strong> you open or ask us to reply to, translate or summarize.</li>
     <li><strong>Inbox preview for the AI Brief.</strong> When you open the home screen of the app, the sender, subject and a text preview of your most recent messages (up to 30, across the accounts you connected) are sent to our server to produce the AI Brief (a short summary and priority list). This happens automatically when the home screen loads, not only when you tap a button. The results are cached for up to 24 hours.</li>
     <li><strong>Attachments</strong> (for example PDF files and images) only when you ask us to analyze them. Compressed (.zip) attachments you open in the app are unpacked on your device; their contents are not sent to our server.</li>
-    <li><strong>Account information</strong>: your sign-in email address, display name, plan and usage counts.</li>
-    <li><strong>Profile you enter</strong>: name, job title, company, signature, business card text and saved phrases. In the app these are stored on your device and sent with a request only when needed to write the reply. In the Chrome extension they are kept in Chrome's sync storage, which Chrome synchronizes across your signed-in browsers through your Google account.</li>
+    <li><strong>Account information</strong>: your sign-in email address, display name, plan and usage counts. If you sign in with Apple and choose to hide your email, we receive the relay address Apple gives us, not your real address.</li>
+    <li><strong>One-time sign-in codes</strong>: if you sign in with your email address, we send a 6-digit code to it. We keep only a fingerprint of the code for 10 minutes and delete it after use.</li>
+    <li><strong>Profile you enter</strong>: name, job title, company, signature, business card text and saved phrases. In the app these are stored on your device and sent with a request only when needed to write the reply. In the Chrome extension they are kept in Chrome's sync storage, which Chrome synchronizes across your signed-in browsers through your Google account. The signature (business card text) you save is also stored on our server with your account, so the app and the extension use the same signature; clearing it in either one clears it in both.</li>
     <li><strong>Chrome extension status check.</strong> When a supported webmail page loads, the extension asks our server for your plan and usage counters, sending only your account email address. Email content is sent only when you click a button for an AI feature, and the extension does not send your inbox list.</li>
     <li><strong>Document profile</strong> (optional): company details and tax registration numbers you enter to generate business documents. These are stored on our server so the feature works across devices.</li>
     <li><strong>Learned style</strong>: your role, industry and preferred tone, and for people you write to, their name, industry, tone and relationship, used to adjust future replies.</li>
@@ -54,7 +56,7 @@
   </ul>
 
   <h2>3. Google API scopes we request</h2>
-  <p>The Chrome extension requests only <code>openid</code>, <code>email</code> and <code>profile</code> to sign you in; it reads the message you have open on the webmail page itself and does not use the Gmail API. The mobile app requests the additional Gmail scopes below.</p>
+  <p>The Chrome extension requests only <code>openid</code>, <code>email</code> and <code>profile</code> to sign you in; it reads the message you have open on the webmail page itself and does not use the Gmail API. Signing in to the mobile app with Google also requests only these scopes. The app requests the Gmail scopes below only when you choose to connect a Gmail account.</p>
   <ul>
     <li><code>openid</code>, <code>email</code>, <code>profile</code>: to sign you in and identify your account.</li>
     <li><code>gmail.modify</code>: to read the messages and attachments you work with, to mark a message as read, and to move a message to Trash when you choose to delete it in the app.</li>
@@ -82,6 +84,7 @@
     <tr><td>Push notification tokens</td><td>30 days</td></tr>
     <tr><td>Learned style (your own, and for contacts)</td><td>Up to 180 days</td></tr>
     <tr><td>Document profile (company details, tax numbers)</td><td>Up to 365 days</td></tr>
+    <tr><td>Signature (business card text) you save</td><td>Until you change or clear it, or ask us to delete your account</td></tr>
     <tr><td>Account record (email, plan) and subscription record</td><td>Until you ask us to delete your account</td></tr>
     <tr><td>Saved phrases and team data (if you use them)</td><td>Until you ask us to delete your account</td></tr>
   </table>
@@ -93,6 +96,8 @@
     <li><strong>Cloudflare</strong>: hosting of our API, data storage, and the secure tunnel to our conversion server.</li>
     <li><strong>Oracle Cloud</strong>: a server we operate for processing and PDF conversion.</li>
     <li><strong>Google (Firebase Cloud Messaging)</strong>: push notifications.</li>
+    <li><strong>Resend</strong>: delivery of the one-time sign-in code email. Resend receives the email address the code is sent to and the code email itself.</li>
+    <li><strong>Apple</strong>: Sign in with Apple, if you choose it.</li>
     <li><strong>Paddle</strong>: payment processing for paid plans on our website. Paddle receives your billing details and email; we receive the plan and subscription status.</li>
   </ul>
   <p>We do not share your data with advertisers or data brokers.</p>
@@ -111,6 +116,7 @@
   <ul>
     <li>Revoke MailMind AI's access to your Google account at any time at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>.</li>
     <li>Disconnect a mail account or sign out in the app to remove its credentials from your device. Uninstalling the app or removing the extension stops all access.</li>
+    <li>You can delete your account yourself in the mobile app: <strong>Settings &gt; Delete account</strong>. This immediately deletes the same server-side records listed below.</li>
     <li>To access or delete your server-side data, email <a href="mailto:hello@mailmind.yongcha.app">hello@mailmind.yongcha.app</a> with the subject "Data Deletion Request". We delete your account data within 30 days of a verified request. This removes your account, subscription, usage, saved phrases, team, push token, document profile and learned style records. Two things cannot be linked to you and are handled differently: translation and mail-summary caches are keyed by a content fingerprint, so they simply expire (up to 7 days and 24 hours), and payment records held by Paddle must be requested from Paddle.</li>
   </ul>
 
@@ -120,6 +126,6 @@
   <h2>11. Changes and contact</h2>
   <p>We will update this page and its date when we change how we handle data. Questions: <a href="mailto:hello@mailmind.yongcha.app">hello@mailmind.yongcha.app</a>.</p>
 </div>
-<footer>© 2026 MailMind AI · <a href="https://mailmind.yongcha.app">mailmind.yongcha.app</a></footer>
+<footer>© 2026 MBTI Ltd. · MailMind AI · <a href="https://mailmind.yongcha.app">mailmind.yongcha.app</a></footer>
 </body>
 </html>
